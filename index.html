@@ -143,22 +143,13 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
   <div class="login-orbit"></div>
  </div>
  <section class="login-card" aria-label="Acceso de alumnos">
-  <div class="login-card-head"><span class="login-status"><i></i> SISTEMA DISPONIBLE · ACCESO DE ALUMNOS</span><h2>Accede a tu academia</h2><p>Identifícate para continuar tu operación.</p></div>
-  <div class="access-tabs"><button id="tabLogin" class="active" type="button" onclick="switchAccess('login')">Iniciar sesión</button><button id="tabRegister" type="button" onclick="switchAccess('register')">Crear perfil</button></div>
+  <div class="login-card-head"><span class="login-status"><i></i> SISTEMA DISPONIBLE · ACCESO DE ALUMNOS</span><h2>Bienvenido a tu academia</h2><p>Escribe tu nombre para entrar directamente a la operación.</p></div>
   <form class="access-form" id="loginForm" onsubmit="loginStudent(event)">
-   <div class="access-field"><label for="loginId">Matrícula o ID de alumno</label><input id="loginId" autocomplete="username" maxlength="32" required placeholder="Ej. A2026001"></div>
-   <div class="access-field"><label for="loginPin">PIN de acceso</label><input id="loginPin" type="password" inputmode="numeric" autocomplete="current-password" minlength="4" maxlength="12" required placeholder="Tu PIN personal"></div>
+   <div class="access-field"><label for="loginName">Nombre del alumno</label><input id="loginName" type="text" autocomplete="name" maxlength="70" required placeholder="Escribe tu nombre completo"></div>
    <button class="access-submit" type="submit">ENTRAR AL CENTRO DE MANDO <span aria-hidden="true">→</span></button>
   </form>
-  <form class="access-form hidden" id="registerForm" onsubmit="registerStudent(event)">
-   <div class="access-field"><label for="registerName">Nombre del alumno</label><input id="registerName" autocomplete="name" maxlength="70" required placeholder="Nombre y apellidos"></div>
-   <div class="access-field"><label for="registerId">Matrícula o ID de alumno</label><input id="registerId" autocomplete="username" maxlength="32" required placeholder="Crea o escribe tu identificador"></div>
-   <div class="access-field"><label for="registerPin">Crea tu PIN (4–12 caracteres)</label><input id="registerPin" type="password" inputmode="numeric" minlength="4" maxlength="12" required placeholder="No uses una contraseña importante"></div>
-   <div class="access-field"><label for="registerPin2">Confirma tu PIN</label><input id="registerPin2" type="password" inputmode="numeric" minlength="4" maxlength="12" required placeholder="Repite tu PIN"></div>
-   <button class="access-submit" type="submit">CREAR PERFIL Y COMENZAR <span aria-hidden="true">→</span></button>
-  </form>
   <div class="access-message" id="accessMessage" role="status"></div>
-  <p class="access-footnote"><strong>Prototipo de aula:</strong> el perfil y el progreso se almacenan localmente en este navegador. No hay sincronización entre dispositivos ni autenticación centralizada todavía. No uses datos sensibles ni un PIN importante.</p>
+  <p class="access-footnote"><strong>Acceso rápido:</strong> no necesitas crear una cuenta, matrícula ni PIN. Tu avance queda asociado al nombre que escribas y se guarda en este navegador.</p>
  </section>
 </div>
 <header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">ACADEMY MODE</span><span id="overall">0% completado</span><div class="student-mini"><span class="student-avatar" id="studentAvatar">A</span><div><b id="studentName">Alumno</b><small id="studentIdLabel">Perfil activo</small></div></div><button class="logout-btn" type="button" onclick="logoutStudent()">Salir</button></div></div></header>
@@ -377,20 +368,13 @@ function prevModule(){let i=moduleIds.indexOf(current);selectModule(moduleIds[Ma
 function nextModule(){let i=moduleIds.indexOf(current),next=moduleIds[Math.min(moduleIds.length-1,i+1)];if(next===current){showToast("Has llegado al último sector disponible.");return;}selectModule(next)}
 function resetCurrent(){if(!confirm("¿Reiniciar todos los pasos, intentos y el objetivo extra de este módulo?"))return;raw[current].steps.forEach((s,i)=>{delete completed[current+"_"+i];delete attempts[current+"_"+i]});delete sideCompleted[current];delete sideAnswers[current];save();renderModule();showToast("Misión reiniciada · puedes volver a conquistarla.");}
 
-const ACCOUNT_STORE="kitcube_academy_accounts_v1";
-const SESSION_STORE="kitcube_academy_session_v1";
-function switchAccess(mode){const isLogin=mode==="login";document.getElementById("loginForm").classList.toggle("hidden",!isLogin);document.getElementById("registerForm").classList.toggle("hidden",isLogin);document.getElementById("tabLogin").classList.toggle("active",isLogin);document.getElementById("tabRegister").classList.toggle("active",!isLogin);showAccessMessage("");}
-function showAccessMessage(message,ok=false){const el=document.getElementById("accessMessage");if(!el)return;el.textContent=message;el.className="access-message"+(message?" show":"");if(ok){el.style.borderColor="#397d69";el.style.background="#103a31";el.style.color="#c4f9df";}else{el.style.borderColor="";el.style.background="";el.style.color="";}}
-function normalizeStudentId(value){return String(value||"").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9_-]/g,"").slice(0,32);}
-function readAccounts(){try{return JSON.parse(localStorage.getItem(ACCOUNT_STORE)||"{}");}catch(e){return {};}}
-async function hashStudentPin(pin){if(!window.crypto||!crypto.subtle)throw new Error("Tu navegador no permite crear un acceso local seguro. Actualiza el navegador e inténtalo otra vez.");const bytes=new TextEncoder().encode("KITCUBE-ACADEMY|"+pin);const digest=await crypto.subtle.digest("SHA-256",bytes);return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,"0")).join("");}
-function updateStudentHud(){if(!activeProfile)return;const name=activeProfile.name||"Alumno";document.getElementById("studentName").textContent=name;document.getElementById("studentIdLabel").textContent="ID · "+activeStudent;document.getElementById("studentAvatar").textContent=(name.trim()[0]||"A").toUpperCase();document.title="KitCube Academy · "+name;}
-function activateStudent(id,profile){activeStudent=id;activeProfile=profile;readStudentProgress();localStorage.setItem(SESSION_STORE,JSON.stringify({id}));document.body.classList.add("authenticated");updateStudentHud();renderModule();updateGlobal();showAccessMessage("");}
-async function loginStudent(event){event.preventDefault();const id=normalizeStudentId(document.getElementById("loginId").value),pin=document.getElementById("loginPin").value;if(!id||pin.length<4){showAccessMessage("Escribe tu matrícula o ID y un PIN válido.");return;}try{const accounts=readAccounts(),profile=accounts[id];if(!profile){showAccessMessage("No existe un perfil con ese identificador. Crea uno o revisa tu matrícula.");return;}const digest=await hashStudentPin(pin);if(digest!==profile.pinHash){showAccessMessage("El PIN no coincide. Revisa tus datos e inténtalo otra vez.");return;}activateStudent(id,profile);}catch(err){showAccessMessage(err.message||"No fue posible iniciar sesión.");}}
-async function registerStudent(event){event.preventDefault();const name=document.getElementById("registerName").value.trim(),id=normalizeStudentId(document.getElementById("registerId").value),pin=document.getElementById("registerPin").value,pin2=document.getElementById("registerPin2").value;if(name.length<3||!id){showAccessMessage("Escribe tu nombre y una matrícula o ID válido.");return;}if(pin.length<4||pin.length>12){showAccessMessage("El PIN debe tener entre 4 y 12 caracteres.");return;}if(pin!==pin2){showAccessMessage("Los PIN no coinciden. Comprueba ambos campos.");return;}const accounts=readAccounts();if(accounts[id]){showAccessMessage("Ese ID ya tiene un perfil. Inicia sesión o utiliza otra matrícula.");return;}try{const profile={name,pinHash:await hashStudentPin(pin),createdAt:new Date().toISOString()};accounts[id]=profile;localStorage.setItem(ACCOUNT_STORE,JSON.stringify(accounts));activateStudent(id,profile);}catch(err){showAccessMessage(err.message||"No se pudo crear el perfil.");}}
-function logoutStudent(){localStorage.removeItem(SESSION_STORE);activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated");document.getElementById("loginForm").reset();document.getElementById("registerForm").reset();switchAccess("login");document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
-function bootAccess(){const sessionRaw=localStorage.getItem(SESSION_STORE);if(!sessionRaw)return;try{const session=JSON.parse(sessionRaw),id=normalizeStudentId(session.id),profile=readAccounts()[id];if(profile)activateStudent(id,profile);else localStorage.removeItem(SESSION_STORE);}catch(e){localStorage.removeItem(SESSION_STORE);}}
+function showAccessMessage(message){const el=document.getElementById("accessMessage");if(!el)return;el.textContent=message;el.className="access-message"+(message?" show":"");}
+function normalizeStudentName(value){return String(value||"").trim().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim().slice(0,70);}
+function updateStudentHud(){if(!activeProfile)return;const name=activeProfile.name||"Alumno";document.getElementById("studentName").textContent=name;document.getElementById("studentIdLabel").textContent="PROGRESO PERSONAL";document.getElementById("studentAvatar").textContent=(name.trim()[0]||"A").toUpperCase();document.title="KitCube Academy · "+name;}
+function activateStudent(id,profile){activeStudent=id;activeProfile=profile;readStudentProgress();document.body.classList.add("authenticated");updateStudentHud();renderModule();updateGlobal();showAccessMessage("");}
+function loginStudent(event){event.preventDefault();const name=document.getElementById("loginName").value.trim(),normalized=normalizeStudentName(name);if(normalized.length<3){showAccessMessage("Escribe tu nombre completo para entrar.");return;}const id="nombre_"+normalized.replace(/\\s+/g,"_");activateStudent(id,{name});}
+function logoutStudent(){activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated");document.getElementById("loginForm").reset();document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
 
-renderModule();bootAccess();
+renderModule();
 </script>
 </body></html>
