@@ -522,6 +522,111 @@ main{max-width:1240px;margin:28px auto 0;padding:0 24px 76px}
  .rank-symbol{width:46px;height:46px}
 }
 
+
+/* KITCUBE CONTROL TOWER · DASHBOARD Y ESPACIO DE MISIÓN SEPARADOS */
+:root{--tower-lime:#c9ef70;--tower-cyan:#70dce4;--tower-panel:#121f32;--tower-border:#2b3b54}
+body{background:radial-gradient(ellipse at 78% -12%,#203653 0,transparent 35%),#0b1220;color:#f2f6ff}
+header{background:#101b30ed;border-bottom:1px solid var(--tower-border);backdrop-filter:blur(14px);padding:12px max(20px,calc((100vw - 1180px)/2))}
+.brand{max-width:1180px}.cube{background:var(--tower-lime);color:#152118;box-shadow:none}
+h1{letter-spacing:.02em;font-size:21px}
+main{width:min(1180px,100%);margin:0 auto;padding:28px 24px 72px}
+.hero{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:22px;margin-bottom:20px}
+.hero>.card:first-child{min-height:0;padding:30px;background:#14243a;border:1px solid var(--tower-border);border-radius:22px;box-shadow:none}
+.hero h2{font-size:clamp(30px,4vw,45px);line-height:1.08;letter-spacing:-.04em}
+.hero p{font-size:14px;line-height:1.75;color:#bdcadd}
+.hero .eyebrow,.journey .eyebrow,.ops-brief .eyebrow,.catalog-section .eyebrow{color:var(--tower-cyan)}
+.hero .progressbar{margin-top:22px}.hero .progressbar i{background:linear-gradient(90deg,var(--tower-cyan),var(--tower-lime))}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;gap:11px;border-radius:22px;box-shadow:none;background:#121f32}
+.stat{padding:17px;border-radius:15px;background:#0d1929;border:1px solid var(--tower-border)}
+.stat b{font-size:29px;color:var(--tower-lime)}.stat span{font-size:10px;letter-spacing:.07em}
+.journey{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:22px 24px;margin:0 0 18px;border-radius:20px;background:#121f32;border:1px solid var(--tower-border);box-shadow:none}
+.journey-head h3{font-size:21px;margin:5px 0}
+.achievement-area{border-left:1px solid var(--tower-border);padding-left:22px}
+.achievement{min-width:132px;flex:0 0 132px;background:#0d1929;border:1px solid var(--tower-border);filter:none}
+.ops-brief{grid-template-columns:1fr auto;gap:20px;padding:18px 22px;margin:0 0 34px;border-radius:17px;background:#13243a;border:1px solid #38516c;box-shadow:none}
+.ops-brief h3{font-size:18px;line-height:1.35;margin:6px 0}.ops-brief p{font-size:12px;line-height:1.7;max-width:720px}
+.ops-brief-stats{min-width:280px;gap:8px}.ops-brief-stats>div{background:#0c1928;border-color:#344a64;padding:12px}
+.ops-brief-stats b{font-size:20px;color:var(--tower-lime)}
+.catalog-section{margin:0 0 28px}
+.catalog-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 17px}
+.catalog-heading h2{font-size:27px;letter-spacing:-.03em;margin:5px 0}.catalog-heading p{font-size:13px;margin:0}
+.catalog-count{padding:10px 14px;border:1px solid var(--tower-border);background:#121f32;border-radius:12px;text-align:right;flex:none}
+.catalog-count strong{display:block;font-size:20px;color:var(--tower-lime)}.catalog-count span{display:block;font-size:9px;letter-spacing:.09em;color:#a9bbcf}
+.mission-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mission-card{min-width:0;padding:19px;border:1px solid var(--tower-border);border-radius:17px;background:#121f32;display:flex;flex-direction:column;box-shadow:none;transition:border-color .18s,transform .18s}
+.mission-card:hover:not(.is-locked){border-color:#6598a4;transform:translateY(-2px)}
+.mission-card.is-locked{background:#0e1928;border-color:#25364b}.mission-card.is-complete{border-color:#648449}
+.mission-card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mission-code{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--tower-cyan)}
+.mission-state{font-size:9px;font-weight:900;letter-spacing:.08em;padding:5px 8px;border-radius:99px;background:#1c3045;color:#aec0d4}
+.is-complete .mission-state{background:#263a26;color:var(--tower-lime)}
+.mission-card-zone{margin:15px 0 6px;color:#8fa5bf;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.mission-card h3{font-size:18px;line-height:1.3;margin:0 0 9px}
+.mission-card>p{font-size:12px;line-height:1.65;margin:0 0 14px;min-height:60px;color:#b3c3d6}
+.mission-card-objective{padding:11px 12px;border-radius:11px;background:#0d1929;border:1px solid #253a53;margin-top:auto}
+.mission-card-objective span{display:block;font-size:9px;letter-spacing:.1em;font-weight:900;color:#91a9c3;margin-bottom:5px}
+.mission-card-objective strong{display:block;font-size:11px;line-height:1.5;color:#e4edf8}
+.mission-card-progress{height:5px;border-radius:99px;background:#26364d;overflow:hidden;margin:15px 0 9px}
+.mission-card-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--tower-cyan),var(--tower-lime))}
+.mission-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:9px}
+.mission-card-bottom>span{font-size:10px;color:#9eb0c5}
+.mission-card-bottom button{border:1px solid #46617c;background:#21374f;color:#eff7ff;border-radius:10px;padding:8px 10px;font-size:10px;font-weight:850;white-space:nowrap}
+.mission-card-bottom button:not(:disabled):hover{background:#2c4a67;border-color:var(--tower-cyan)}
+.mission-card-bottom button:disabled{opacity:.45;cursor:not-allowed}
+.dashboard-return{display:none}body.mission-open .dashboard-return{display:inline-flex}
+body.mission-open main{padding-top:24px}
+body.mission-open #homeHero,body.mission-open #homeJourney,body.mission-open #homeBrief,body.mission-open #missionCatalog,body.mission-open .route-head,body.mission-open #tabs{display:none!important}
+body:not(.mission-open) #missionWorkspace{display:none!important}
+.route-head,#tabs{display:none!important}
+#missionWorkspace{grid-template-columns:minmax(0,1fr) 250px;gap:22px;align-items:start}
+#missionWorkspace .workspace{grid-column:1;grid-row:1;min-width:0}
+#missionWorkspace .side{grid-column:2;grid-row:1;position:sticky;top:84px;padding:18px;background:#121f32;border:1px solid var(--tower-border);border-radius:17px;box-shadow:none}
+#missionWorkspace .side h3{font-size:13px;margin-bottom:13px}
+#missionWorkspace .side .mini{font-size:11px;padding:10px 0}#missionWorkspace .side .mini b{color:var(--tower-lime)}
+.module-heading-top{display:flex;align-items:center;gap:13px;margin-bottom:11px}
+.back-home{border:1px solid #3b526d;background:#15273d;color:#c8d8ea;border-radius:10px;padding:8px 11px;font-size:11px;font-weight:800}
+.back-home:hover{border-color:var(--tower-cyan);color:#fff}
+.module-crumb{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--tower-cyan);font-weight:900}
+.module-head h2{font-size:clamp(27px,3.2vw,36px);margin:0 0 7px}.module-head p{font-size:13px;max-width:760px;line-height:1.65}
+#moduleIntro{padding:0;background:transparent;border:0;box-shadow:none;margin:0 0 20px;display:grid;gap:14px}
+.mission-overview{padding:20px 22px;background:#14243a;border:1px solid var(--tower-border);border-radius:17px}
+.mission-overview-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.overview-label{color:var(--tower-cyan);font-size:10px;font-weight:900;letter-spacing:.12em}
+.mission-overview .mission-reward{background:#253825;border-color:#587344;color:var(--tower-lime);padding:8px 13px}
+.mission-brief-text{font-size:13px;line-height:1.7;margin:13px 0;color:#c0cedd;max-width:850px}
+.mission-primary{display:grid;gap:5px;padding-top:13px;border-top:1px solid #30445d}
+.mission-primary span{font-size:9px;color:#92a9c1;font-weight:900;letter-spacing:.1em}.mission-primary strong{font-size:13px;color:#edf5ff;font-weight:700}
+.case-study-panel{margin:0;padding:19px 20px;border:1px solid var(--tower-border);border-radius:17px;background:#121f32;box-shadow:none}
+.case-study-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:13px}
+.case-study-tag{font-size:9px;color:var(--tower-cyan);font-weight:900;letter-spacing:.12em}.case-study-sector{font-size:9px;color:#94a9c1}
+.case-study-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(210px,.7fr);gap:18px;align-items:center}
+.case-study-copy{min-width:0}.case-study-copy h3{font-size:18px;line-height:1.35;margin:0 0 10px}
+.case-study-lead{font-size:12px;line-height:1.7;color:#e0ebf6;margin:0 0 15px}
+.case-study-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.case-study-facts>div{padding:11px 12px;background:#0d1929;border:1px solid #263b54;border-radius:11px}
+.case-study-facts span{font-size:9px;color:var(--tower-cyan);font-weight:900;letter-spacing:.1em}
+.case-study-facts p{font-size:10px;line-height:1.6;margin:6px 0 0;color:#afc0d2}
+.case-study-photo{min-height:190px;border-color:#3b5875;border-radius:13px}
+.case-study-photo img{min-height:190px;max-height:230px}.case-study-photo figcaption{font-size:8px}
+.case-details{margin:12px 0 0;background:#0d1929;border-color:#2b4059}
+.case-details summary,.technical-file summary{font-size:11px;color:#c8d8ea}
+.case-details p{font-size:11px;line-height:1.7;margin:10px 0 0}
+.technical-file{margin:0;padding:14px 17px;background:#101c2e;border:1px solid #2b4059;border-radius:14px}
+.technical-file>p{font-size:12px;line-height:1.65;margin:10px 0}.technical-file .data-table{margin:12px 0 3px}
+.steps-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:28px 0 12px}
+.steps-heading h3{font-size:20px;margin:4px 0}.steps-heading p{font-size:11px;line-height:1.6;margin:0}
+#steps{display:grid;gap:11px}
+.step{margin:0;border-radius:15px;background:#121f32;border:1px solid var(--tower-border);box-shadow:none}
+.step.locked{display:none!important}.step.archived .step-body{display:none}.step.archived .step-top{background:#101d2e}.step.archived .state{color:var(--tower-lime)}
+.step-top{padding:14px 16px}.step-body{padding:16px 18px}.step-body>p{font-size:12px;line-height:1.7}
+.step .formula{padding:12px 14px;margin:12px 0;font-size:12px}.step .answerrow{margin-top:14px}
+.step .answerrow button{background:var(--tower-lime);color:#172216;box-shadow:none}.step .hintbtn{background:#1c3045;border-color:#3a526d}
+.side-mission{margin:18px 0 0;padding:18px;background:#172a3b;border:1px solid #465b67;box-shadow:none}.side-mission h3{font-size:17px}
+.footer-actions{margin-top:22px;padding-top:16px;border-top:1px solid #2b3b54}.secondary{box-shadow:none}
+@media(max-width:1050px){.mission-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#missionWorkspace{grid-template-columns:minmax(0,1fr) 220px;gap:16px}.ops-brief{grid-template-columns:1fr}.ops-brief-stats{max-width:430px}}
+@media(max-width:780px){main{padding:20px 17px 55px}.hero{grid-template-columns:1fr}.hero>.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.journey{grid-template-columns:1fr}.achievement-area{border-left:0;border-top:1px solid var(--tower-border);padding:15px 0 0}.mission-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}#missionWorkspace{grid-template-columns:1fr}#missionWorkspace .workspace{grid-column:1;grid-row:1}#missionWorkspace .side{grid-column:1;grid-row:2;position:static}.case-study-layout{grid-template-columns:minmax(0,1.2fr) minmax(180px,.8fr)}.case-study-photo,.case-study-photo img{min-height:170px}}
+@media(max-width:580px){header{padding:11px 13px}.topmeta{gap:6px}.student-mini{display:none}main{padding:17px 13px 48px}.hero>.card:first-child{padding:22px}.hero>.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.journey{padding:17px}.achievement-area{border-top:1px solid var(--tower-border)}.ops-brief{padding:15px}.ops-brief-stats{min-width:0}.catalog-heading{align-items:flex-start}.catalog-heading h2{font-size:23px}.catalog-heading p{font-size:11px}.catalog-count{padding:8px 10px}.catalog-count strong{font-size:17px}.catalog-count span{font-size:7px}.mission-grid{grid-template-columns:1fr}.mission-card{padding:16px}.mission-card>p{min-height:0}.mission-card-bottom{align-items:flex-start;flex-direction:column}.mission-card-bottom button{width:100%}.dashboard-return{display:none!important}body.mission-open .dashboard-return{display:inline-flex!important}body.mission-open main{padding-top:16px}.module-heading-top{flex-wrap:wrap}.module-head h2{font-size:27px}#moduleIntro{gap:11px}.mission-overview{padding:16px}.mission-overview-top{align-items:flex-start}.mission-brief-text{font-size:12px}.case-study-panel{padding:15px}.case-study-layout{grid-template-columns:1fr}.case-study-photo,.case-study-photo img{min-height:180px;max-height:210px}.case-study-facts{grid-template-columns:1fr}.technical-file{padding:12px}.steps-heading{margin-top:21px}.steps-heading h3{font-size:18px}.step-top{padding:12px}.step-body{padding:13px}}
+
 </style>
 </head>
 <body>
@@ -550,13 +655,13 @@ main{max-width:1240px;margin:28px auto 0;padding:0 24px 76px}
   <p class="access-footnote"><strong>Acceso rápido:</strong> no necesitas crear una cuenta, matrícula ni PIN. Tu avance queda asociado al nombre que escribas y se guarda en este navegador.</p>
  </section>
 </div>
-<header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">ACADEMY MODE</span><span id="overall">0% completado</span><div class="student-mini"><span class="student-avatar" id="studentAvatar">A</span><div><b id="studentName">Alumno</b><small id="studentIdLabel">Perfil activo</small></div></div><button class="logout-btn" type="button" onclick="logoutStudent()">Salir</button></div></div></header>
+<header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">ACADEMY MODE</span><span id="overall">0% completado</span><div class="student-mini"><span class="student-avatar" id="studentAvatar">A</span><div><b id="studentName">Alumno</b><small id="studentIdLabel">Perfil activo</small></div></div><button class="logout-btn dashboard-return" type="button" onclick="goDashboard()">← Centro de mando</button><button class="logout-btn" type="button" onclick="logoutStudent()">Salir</button></div></div></header>
 <main>
-<section class="hero">
+<section class="hero" id="homeHero">
  <div class="card"><div class="eyebrow">Aula práctica interactiva</div><h2>Operación Precisión CNC: control de variación.</h2><p>En Mecánica de Precisión del Norte se fabrican tuercas, rondanas y ejes en máquinas CNC. El equipo de Calidad necesita analizar las dimensiones de las piezas y distinguir la variación del proceso del error del sistema de medición.</p><div class="progressbar"><i id="globalbar"></i></div><div class="note" id="globaltext">Tu avance se guarda en este dispositivo.</div></div>
  <div class="card stats"><div class="stat"><b id="doneCount">0</b><span>PASOS DOMINADOS</span></div><div class="stat"><b id="totalCount">0</b><span>PASOS DE LA OPERACIÓN</span></div><div class="stat"><b id="moduleCount">0/11</b><span>MISIONES COMPLETADAS</span></div><div class="stat"><b id="score">0 XP</b><span>RECOMPENSA ACUMULADA</span></div></div>
 </section>
-<section class="journey card" aria-label="Tu progresión KitCube">
+<section class="journey card" id="homeJourney" aria-label="Tu progresión KitCube">
  <div class="journey-main">
   <div class="eyebrow">Tu trayectoria · laboratorio de habilidades</div>
   <div class="journey-head"><div><h3 id="rankTitle">Aprendiz de laboratorio</h3><p id="rankCopy">Cada paso que dominas te acerca al siguiente rango.</p></div><div class="rank-symbol" id="rankSymbol">◇</div></div>
@@ -565,12 +670,12 @@ main{max-width:1240px;margin:28px auto 0;padding:0 24px 76px}
  </div>
  <div class="achievement-area"><div class="achievement-title">INSIGNIAS QUE PUEDES DESBLOQUEAR</div><div class="achievement-grid" id="achievements"></div></div>
 </section>
-<section class="ops-brief card" aria-label="Briefing de la operación"><div class="ops-brief-left"><div class="eyebrow">CENTRO DE MANDO · MECÁNICA DE PRECISIÓN DEL NORTE</div><h3>Auditoría de medición de la área de maquinado CNC</h3><p>La planta detectó variación dimensional en un lote de rondanas y requiere verificar sus procesos de torneado y medición. Tu escuadrón debe identificar las fuentes de variación y emitir una conclusión técnica antes de recomendar una decisión de calidad.</p></div><div class="ops-brief-stats"><div><b id="missionsUnlocked">1/11</b><span>MISIONES ABIERTAS</span></div><div><b id="sideCompleted">0</b><span>OBJETIVOS EXTRA</span></div><div><b id="nextMission">10</b><span>SIGUIENTE SECTOR</span></div></div></section>
-<div class="route-head"><h3>Mapa de misiones</h3><span>Completa la misión principal para abrir el siguiente sector</span></div>
+<section class="ops-brief card" id="homeBrief" aria-label="Briefing de la operación"><div class="ops-brief-left"><div class="eyebrow">CENTRO DE MANDO · MECÁNICA DE PRECISIÓN DEL NORTE</div><h3>Auditoría de medición de la área de maquinado CNC</h3><p>La planta detectó variación dimensional en un lote de rondanas y requiere verificar sus procesos de torneado y medición. Tu escuadrón debe identificar las fuentes de variación y emitir una conclusión técnica antes de recomendar una decisión de calidad.</p></div><div class="ops-brief-stats"><div><b id="missionsUnlocked">1/11</b><span>MISIONES ABIERTAS</span></div><div><b id="sideCompleted">0</b><span>OBJETIVOS EXTRA</span></div><div><b id="nextMission">10</b><span>SIGUIENTE SECTOR</span></div></div></section>
+<section class="catalog-section" id="missionCatalog"><div class="catalog-heading"><div><div class="eyebrow">RUTA DE APRENDIZAJE</div><h2>Misiones de metrología</h2><p>Avanza estación por estación. Cada misión desbloquea la siguiente.</p></div><div class="catalog-count"><strong id="catalogUnlocked">1 / 11</strong><span>ESTACIONES DISPONIBLES</span></div></div><div class="mission-grid" id="missionCards"></div></section><div class="route-head"><h3>Mapa de misiones</h3><span>Completa la misión principal para abrir el siguiente sector</span></div>
 <nav class="tabs" id="tabs" aria-label="Módulos del laboratorio"></nav>
-<div class="layout">
+<div class="layout" id="missionWorkspace">
  <aside class="side card"><h3>Panel del módulo</h3><div class="mini"><span>Actividad</span><b id="sideTitle">—</b></div><div class="mini"><span>Pasos completados</span><b id="sideDone">0 / 0</b></div><div class="mini"><span>Intentos registrados</span><b id="sideAttempts">0</b></div><div class="mini"><span>Estado</span><b id="sideStatus">En curso</b></div><div class="progressbar"><i id="modulebar"></i></div><div class="note" id="moduleProgressText">0% de esta estación dominado</div><p id="sideDesc">Selecciona un módulo para comenzar.</p><div class="callout">Consejo: conserva unidades y redondea solo al final. En los cálculos de varianza, las unidades quedan al cuadrado.</div><button class="secondary" style="width:100%" onclick="resetCurrent()">Reiniciar este módulo</button></aside>
- <section class="workspace"><div class="module-head"><div><div class="eyebrow" id="moduleEyebrow">MÓDULO 10</div><h2 id="moduleTitle">Varianza y desviación estándar</h2><p id="moduleDesc"></p></div></div><div id="moduleIntro" class="card"></div><div id="steps"></div><div id="sideMission"></div><div class="footer-actions"><button class="secondary" onclick="prevModule()">← Anterior</button><button class="action" onclick="nextModule()">Siguiente módulo →</button></div></section>
+ <section class="workspace"><div class="module-head"><div class="module-heading-top"><button type="button" class="back-home" onclick="goDashboard()">← Centro de mando</button><span class="module-crumb" id="moduleEyebrow">MISIÓN M-01</span></div><h2 id="moduleTitle">Varianza y desviación estándar</h2><p id="moduleDesc"></p></div><div id="moduleIntro" class="card"></div><div id="steps"></div><div id="sideMission"></div><div class="footer-actions"><button class="secondary" onclick="prevModule()">← Anterior</button><button class="action" onclick="nextModule()">Siguiente módulo →</button></div></section>
 </div>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -727,6 +832,24 @@ function missionDone(id){return raw[id].steps.every((st,i)=>!!completed[id+"_"+i
 function isModuleUnlocked(id){const index=moduleIds.indexOf(id);return index<=0||missionDone(moduleIds[index-1])}
 function renderTabs(){document.getElementById("tabs").innerHTML=moduleIds.map(id=>{const total=raw[id].steps.length,done=raw[id].steps.filter((st,i)=>completed[id+"_"+i]).length,pct=Math.round(done/total*100),unlocked=isModuleUnlocked(id),cleared=done===total,meta=missionMeta[id];return `<button class="tab ${id===current?"active":""} ${cleared?"done":unlocked?"active":"locked"}" ${unlocked?`onclick="selectModule(${id})"`:"disabled"} aria-label="${esc(meta.name)} · ${unlocked?"desbloqueada":"bloqueada"}"><span class="tab-num">${unlocked?meta.code.slice(-2):"🔒"}</span><span class="tab-info"><span class="mission-chip">${esc(meta.zone)}</span><strong>${esc(meta.name)}</strong><small>${cleared?"MISIÓN COMPLETADA":unlocked?`${done}/${total} pasos · ${pct}%`:`Bloqueada · completa la anterior`}</small><i class="tab-track"><b style="width:${pct}%"></b></i></span>${cleared?'<span class="tab-check">✓</span>':unlocked?'<span class="tab-check">›</span>':'<span class="tab-check">⌑</span>'}</button>`}).join("")}
 
+function renderMissionCatalog(){
+ const target=document.getElementById("missionCards");if(!target)return;
+ const available=moduleIds.filter(isModuleUnlocked).length;
+ const count=document.getElementById("catalogUnlocked");if(count)count.textContent=available+" / "+moduleIds.length;
+ target.innerHTML=moduleIds.map(id=>{
+  const meta=missionMeta[id],total=raw[id].steps.length,done=raw[id].steps.filter((st,i)=>!!completed[id+"_"+i]).length;
+  const pct=Math.round(done/total*100),unlocked=isModuleUnlocked(id),cleared=done===total;
+  const state=cleared?"COMPLETADA":unlocked?"DISPONIBLE":"BLOQUEADA";
+  return `<article class="mission-card ${cleared?'is-complete':''} ${unlocked?'':'is-locked'}">
+   <div class="mission-card-top"><span class="mission-code">${esc(meta.code)}</span><span class="mission-state">${state}</span></div>
+   <div class="mission-card-zone">${esc(meta.zone)}</div><h3>${esc(meta.name)}</h3><p>${esc(meta.brief)}</p>
+   <div class="mission-card-objective"><span>OBJETIVO PRINCIPAL</span><strong>${esc(meta.primary)}</strong></div>
+   <div class="mission-card-progress"><i style="width:${pct}%"></i></div>
+   <div class="mission-card-bottom"><span>${done} de ${total} pasos · ${pct}%</span><button type="button" ${unlocked?'':'disabled'} onclick="selectModule(${id})">${cleared?"Repasar misión":unlocked?"Abrir misión →":"Completa la anterior"}</button></div>
+  </article>`;
+ }).join("");
+}
+
 function normalize(s){return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/,/g,".").trim()}
 function inputFor(step,i){
  const expected=step[3];
@@ -738,7 +861,26 @@ function inputFor(step,i){
  return `<input id="ans${i}" type="number" step="any" inputmode="decimal" placeholder="Escribe tu resultado numérico">`;
 }
 const moduleCaseNotes={10:["Primero define el tamaño de la muestra: son cinco rondanas seleccionadas para inspección, no necesariamente todas las rondanas fabricadas en el lote.","La suma reúne todas las mediciones en un solo total. Después se dividirá entre cinco para obtener un espesor promedio representativo de esta muestra.","El promedio de 11 mm será la referencia para comparar cada rondana. No significa que todos midan exactamente 11 mm.","Compara la primera rondana con el espesor promedio. El signo negativo indica que mide menos que el promedio.","Compara la segunda rondana con el espesor promedio. Un signo positivo indica que mide más que el promedio.","Compara la tercera rondana con el espesor promedio. Conserva el signo: todavía no debes elevar al cuadrado.","Compara la cuarta rondana con el espesor promedio. Esta diferencia es la más grande de la muestra.","Compara la quinta rondana con el espesor promedio. Al sumar las cinco diferencias con signo obtendrás cero, porque están medidas respecto de la media.","Al cuadrar una diferencia negativa, el resultado deja de ser negativo. Así se evita que las diferencias menores y mayores se cancelen.","La segunda rondana está 1 mm por encima del promedio; al cuadrar su diferencia aporta 1 mm² a la variación.","La tercera rondana está 2 mm por debajo del promedio; su diferencia al cuadrado aporta 4 mm².","La cuarta rondana está 3 mm por encima del promedio; por eso aporta 9 mm², la mayor contribución individual.","La quinta rondana aporta 1 mm², igual que la primera, porque ambas se encuentran a 1 mm del promedio.","Al sumar los cuadrados obtienes una medida conjunta de la dispersión de las cinco rondanas. Las diferencias grandes pesan más porque se elevan al cuadrado.","Se resta uno porque el promedio se estimó con la misma muestra y queda un grado de libertad menos para calcular la variación alrededor de esa media.","Divide la suma de cuadrados entre los cuatro grados de libertad. Esta es la varianza de la muestra; sus unidades son mm² porque las diferencias se elevaron al cuadrado.","La desviación estándar vuelve a expresar la dispersión en milímetros, la misma unidad utilizada para medir el espesor de las rondanas. Esto facilita comunicar el resultado al área de Producción y Calidad.","En este caso, una desviación estándar de 2 mm indica dispersión alrededor del promedio de 11 mm. Para decidir si esa variación es aceptable, Calidad tendría que compararla con una tolerancia o criterio técnico definido."]};
-function renderCaseStudy(m){if(!m.caseStudy)return '';const c=m.caseStudy;return '<section class="case-study-panel"><div class="case-study-top"><span class="case-study-tag">CASO DE ESTUDIO APLICADO</span><span class="case-study-sector">'+esc(c.sector)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-study-layout"><figure class="case-study-photo"><img src="assets/kitcube-spacers.webp" alt="Rondanas metálicas mecanizadas en CNC para inspección dimensional"><figcaption><i></i> INSPECCIÓN METROLÓGICA · CNC · CELDA 02</figcaption></figure><div class="case-study-story"><article><b>Situación en planta</b><p>'+esc(c.context)+'</p></article><article><b>¿Por qué importa?</b><p>'+esc(c.why)+'</p></article><article class="case-story-mission"><b>Tu misión como analista</b><p>'+esc(c.mission)+'</p></article><article class="case-story-boundary"><b>Alcance de tu conclusión</b><p>'+esc(c.decision)+'</p></article></div><aside class="case-study-side"><div class="mentor-card"><img src="assets/kitcube-mentor.webp" alt="Guía visual del laboratorio KitCube"><div><b>Consejo del analista</b><p>En metrología CNC, cada milímetro cuenta. Identifica la característica, revisa el instrumento y analiza la variación antes de concluir.</p></div></div><div class="spacer-photo"><img src="assets/kitcube-spacers.webp" alt="Separadores metálicos seleccionados para inspección"><div><b>Pieza bajo inspección</b><span>Rondanas CNC · espesor en mm</span></div></div></aside></div></section>';}
+function renderCaseStudy(m){
+ if(!m.caseStudy)return '';
+ const c=m.caseStudy;
+ return `
+ <section class="case-study-panel">
+  <div class="case-study-top"><span class="case-study-tag">CASO DE PLANTA</span><span class="case-study-sector">${esc(c.sector)}</span></div>
+  <div class="case-study-layout">
+   <div class="case-study-copy">
+    <h3>${esc(c.title)}</h3>
+    <p class="case-study-lead">${esc(c.mission)}</p>
+    <div class="case-study-facts">
+     <div><span>CONTEXTO</span><p>${esc(c.context)}</p></div>
+     <div><span>RELEVANCIA</span><p>${esc(c.why)}</p></div>
+    </div>
+    <details class="case-details"><summary>Ver alcance y criterio técnico</summary><p>${esc(c.decision)}</p></details>
+   </div>
+   <figure class="case-study-photo"><img src="assets/kitcube-spacers.webp" alt="Rondanas metálicas de precisión para inspección dimensional"><figcaption>INSPECCIÓN METROLÓGICA · CNC</figcaption></figure>
+  </div>
+ </section>`;
+}
 const varianceReadings=[10,12,9,14,10];
 let selectedVariancePiece=0;
 function renderVarianceExplorer(){
@@ -758,11 +900,29 @@ function updateVarianceExplorer(){
  if(insight)insight.innerHTML='<div><span>PIEZA</span><strong>P'+(selectedVariancePiece+1)+'</strong></div><div><span>ESPESOR MEDIDO</span><b>'+value+' mm</b></div><div><span>'+(meanKnown?'COMPARACIÓN CON x̄ = 11 mm':'SIGUIENTE DESCUBRIMIENTO')+'</span><b>'+status+'</b></div>';
 }
 function renderModule(){
- const m=raw[current];document.getElementById("moduleEyebrow").textContent="MÓDULO "+current;
- document.getElementById("moduleTitle").textContent=m.title;document.getElementById("moduleDesc").textContent=m.desc;
- const meta=missionMeta[current];
- document.getElementById("moduleIntro").innerHTML=`${renderCaseStudy(m)}<div class="mission-brief"><div><span class="side-quest-tag">${esc(meta.code)} · MISIÓN PRINCIPAL</span><h3>${esc(meta.name)}</h3><p>${esc(meta.brief)}<br><strong>Objetivo:</strong> ${esc(meta.primary)}</p></div><div class="mission-reward"><b>+${25*m.steps.length+80} XP</b><small>RECOMPENSA BASE</small></div></div><div class="eyebrow">Expediente técnico</div><p>${esc(m.intro)}</p>${makeTable(m.table)}${current===10?renderVarianceExplorer():""}`;
- document.getElementById("steps").innerHTML=m.steps.map((s,i)=>{let done=!!completed[current+"_"+i];return `<article class="step ${done?'done':''} ${i>0&&!completed[current+"_"+(i-1)]?'locked':''}" id="step${i}"><div class="step-top"><div class="num">${done?'✓':i+1}</div><h3>${esc(s[0])}</h3><span class="state">${done?'Completado':'Pendiente'}</span></div><div class="step-body"><p>${esc(s[1])}</p>${moduleCaseNotes[current]&&moduleCaseNotes[current][i]?'<div class="case-step-note"><b>Conexión con el caso</b><span>'+esc(moduleCaseNotes[current][i])+'</span></div>':""}<div class="formula">${esc(s[2])}</div><div class="answerrow">${inputFor(s,i).replace("<input ", (i>0&&!completed[current+"_"+(i-1)]?"<input disabled ":"<input ")).replace("<select ", (i>0&&!completed[current+"_"+(i-1)]?"<select disabled ":"<select ")).replace("<textarea ", (i>0&&!completed[current+"_"+(i-1)]?"<textarea disabled ":"<textarea "))}<button ${i>0&&!completed[current+"_"+(i-1)]?"disabled":""} onclick="check(${i})">Comprobar</button></div><button class="hintbtn" onclick="hint(${i})">Ver pista</button><div class="feedback" id="fb${i}"></div></div></article>`}).join("");
+ const m=raw[current],meta=missionMeta[current];
+ const doneIndexes=m.steps.map((st,i)=>completed[current+"_"+i]?i:-1).filter(i=>i>=0);
+ const latestDone=doneIndexes.length?Math.max(...doneIndexes):-1;
+ document.getElementById("moduleEyebrow").textContent=meta.code+" · "+meta.zone.toUpperCase();
+ document.getElementById("moduleTitle").textContent=meta.name;
+ document.getElementById("moduleDesc").textContent=meta.brief;
+ const tableMarkup=m.table?'<details class="technical-file"><summary>Consultar expediente técnico y datos de medición</summary><p>'+esc(m.intro)+'</p>'+makeTable(m.table)+(current===10?renderVarianceExplorer():"")+'</details>':'<div class="technical-file"><p>'+esc(m.intro)+'</p></div>';
+ document.getElementById("moduleIntro").innerHTML=`
+  <div class="mission-overview">
+   <div class="mission-overview-top"><span class="overview-label">OBJETIVO DE LA MISIÓN</span><span class="mission-reward"><b>+${25*m.steps.length+80} XP</b><small>RECOMPENSA BASE</small></span></div>
+   <p class="mission-brief-text">${esc(meta.brief)}</p>
+   <div class="mission-primary"><span>RESULTADO QUE DEBES LOGRAR</span><strong>${esc(meta.primary)}</strong></div>
+  </div>
+  ${renderCaseStudy(m)}
+  ${tableMarkup}`;
+ document.getElementById("steps").innerHTML='<div class="steps-heading"><div><span class="eyebrow">EJECUCIÓN</span><h3>Desarrollo de la misión</h3><p>Resuelve cada etapa en orden. El siguiente paso aparecerá cuando valides el actual.</p></div></div>'+m.steps.map((s,i)=>{
+  let done=!!completed[current+"_"+i],archived=done&&i<latestDone;
+  return `<article class="step ${done?'done':''} ${archived?'archived':''} ${i>0&&!completed[current+"_"+(i-1)]?'locked':''}" id="step${i}">
+   <div class="step-top"><div class="num">${done?'✓':i+1}</div><h3>${esc(s[0])}</h3><span class="state">${done?'Completado':'Paso activo'}</span></div>
+   <div class="step-body"><p>${esc(s[1])}</p>${moduleCaseNotes[current]&&moduleCaseNotes[current][i]?'<div class="case-step-note"><b>En contexto</b><span>'+esc(moduleCaseNotes[current][i])+'</span></div>':""}
+   <div class="formula">${esc(s[2])}</div><div class="answerrow">${inputFor(s,i).replace("<input ",(i>0&&!completed[current+"_"+(i-1)]?"<input disabled ":"<input ")).replace("<select ",(i>0&&!completed[current+"_"+(i-1)]?"<select disabled ":"<select ")).replace("<textarea ",(i>0&&!completed[current+"_"+(i-1)]?"<textarea disabled ":"<textarea "))}<button ${i>0&&!completed[current+"_"+(i-1)]?"disabled":""} onclick="check(${i})">Comprobar respuesta</button></div>
+   <button class="hintbtn" onclick="hint(${i})">Ver pista</button><div class="feedback" id="fb${i}"></div></div></article>`
+ }).join("");
  updateSide();renderTabs();updateGlobal();renderSideMission();updateVarianceExplorer();
 }
 function renderSideMission(){const meta=missionMeta[current],unlocked=missionDone(current),done=!!sideCompleted[current],draft=sideAnswers[current]||"",target=document.getElementById("sideMission");if(!target)return;target.innerHTML=`<section class="side-mission ${unlocked?"":"locked"}"><div class="eyebrow">OBJETIVO SECUNDARIO · ${esc(meta.code)}</div><h3>${done?"Objetivo extra completado":esc(meta.side)}</h3><p>${unlocked?"Ve más allá del cálculo: demuestra que puedes explicar la decisión como profesional de Calidad.":"Este objetivo se abre al completar todos los pasos de la misión principal."}</p>${unlocked?`<div class="answerrow"><textarea id="sideAnswer" class="writebox" placeholder="Redacta tu explicación con tus propias palabras…" oninput="saveSideDraft()">${esc(draft)}</textarea></div><div class="answerrow"><button class="hintbtn" onclick="sideHint()">Ver orientación</button><button class="action" onclick="checkSideMission()">Validar objetivo · +${meta.reward} XP</button></div><div class="feedback" id="sideFeedback"></div>${done?'<div class="callout">Recompensa conseguida. Tu respuesta y tu logro se conservan en este dispositivo.</div>':""}`:`<div class="locked-msg">🔒 Misión principal pendiente · completa los pasos de esta estación para activar el desafío adicional.</div>`}</section>`;}
@@ -779,7 +939,7 @@ function check(i){
  if(isTextStep(s)){const v=normalize(val);ok=s[3].every(k=>v.includes(normalize(k)));}
  else if(typeof s[3]==="string"){ok=normalize(val)===normalize(s[3]);}
  else {const n=Number(val);ok=val!==""&&Number.isFinite(n)&&Math.abs(n-s[3])<=s[4];}
- if(ok){completed[current+"_"+i]=true;fb.className="feedback ok";fb.innerHTML=`<b>¡Correcto!</b> ${esc(s[5])} <br><span class="note">Paso validado. Puedes continuar con el siguiente.</span>`;document.getElementById("step"+i).classList.add("done");document.querySelector("#step"+i+" .state").textContent="Completado";document.querySelector("#step"+i+" .num").textContent="✓";let nx=document.getElementById("step"+(i+1));if(nx){nx.classList.remove("locked");let inp=nx.querySelector("input,select,textarea");let btn=nx.querySelector("button:not(.hintbtn)");if(inp)inp.disabled=false;if(btn)btn.disabled=false;}if(!wasDone){const moduleNowDone=raw[current].steps.every((st,j)=>!!completed[current+"_"+j]);showToast(moduleNowDone&&!moduleWasDone?"MISIÓN COMPLETADA · +25 XP y +80 XP de bonificación":"+25 XP · PASO VALIDADO · Sigue construyendo tu dominio.");}else{showToast("Paso ya validado · Tu progreso está protegido.");}}
+ if(ok){completed[current+"_"+i]=true;if(i>0){const previousStep=document.getElementById("step"+(i-1));if(previousStep&&previousStep.classList.contains("done"))previousStep.classList.add("archived");}fb.className="feedback ok";fb.innerHTML=`<b>¡Correcto!</b> ${esc(s[5])} <br><span class="note">Paso validado. Puedes continuar con el siguiente.</span>`;document.getElementById("step"+i).classList.add("done");document.querySelector("#step"+i+" .state").textContent="Completado";document.querySelector("#step"+i+" .num").textContent="✓";let nx=document.getElementById("step"+(i+1));if(nx){nx.classList.remove("locked");let inp=nx.querySelector("input,select,textarea");let btn=nx.querySelector("button:not(.hintbtn)");if(inp)inp.disabled=false;if(btn)btn.disabled=false;}if(!wasDone){const moduleNowDone=raw[current].steps.every((st,j)=>!!completed[current+"_"+j]);showToast(moduleNowDone&&!moduleWasDone?"MISIÓN COMPLETADA · +25 XP y +80 XP de bonificación":"+25 XP · PASO VALIDADO · Sigue construyendo tu dominio.");}else{showToast("Paso ya validado · Tu progreso está protegido.");}}
  else{fb.className="feedback no";let msg=isTextStep(s)?"Tu explicación todavía está incompleta. Incluye los conceptos clave solicitados.":typeof s[3]==="string"?"Esa opción no corresponde a la situación. Relee el caso y piensa qué fuente describe.":"El resultado no coincide con el valor esperado dentro de la tolerancia. Revisa fórmula, sustitución, operación y unidades.";fb.innerHTML=`<b>Revisa tu procedimiento.</b> ${msg}<br><span class="note">Intento ${attempts[current+"_"+i]}. Puedes corregirlo y comprobar otra vez.</span>`;}
  save();updateSide();updateGlobal();renderTabs();renderSideMission();updateVarianceExplorer();updateVarianceExplorer();
 }
@@ -789,10 +949,14 @@ function updateSide(){let m=raw[current],done=m.steps.filter((s,i)=>completed[cu
 function progressSnapshot(){let total=0,done=0,mastered=0,side=0;moduleIds.forEach(id=>{let localDone=0;raw[id].steps.forEach((st,i)=>{total++;if(completed[id+"_"+i]){done++;localDone++}});if(localDone===raw[id].steps.length)mastered++;if(sideCompleted[id])side++});return {total,done,mastered,side,pct:Math.round(done/total*100),xp:done*25+mastered*80+side*missionMeta[10].reward}}
 const ranks=[{xp:0,name:"Aprendiz de laboratorio",symbol:"◇",copy:"Tu operación empieza aquí. Cada paso dominado construye tu criterio."},{xp:180,name:"Técnico de medición",symbol:"⌁",copy:"Ya dominas procedimientos y validas resultados con orden."},{xp:430,name:"Analista metrológico",symbol:"⌗",copy:"Identificas fuentes de variación y conectas los datos con sus causas."},{xp:760,name:"Especialista en estadística",symbol:"✳",copy:"Transformas mediciones en evidencia estadística."},{xp:1120,name:"Auditor MSA",symbol:"◈",copy:"Evalúas repetibilidad, reproducibilidad y desempeño del sistema."},{xp:1580,name:"Maestro KitCube",symbol:"✦",copy:"Conduces análisis completos y explicas decisiones técnicas."},{xp:2150,name:"Referente de calidad",symbol:"✺",copy:"Tu dominio integra cálculo, criterio y comunicación profesional."},{xp:2850,name:"Leyenda metrológica",symbol:"🏆",copy:"Has completado una operación de calidad de principio a fin."}];
 function updateGamification(snapshot){let xp=snapshot.xp,idx=0;for(let i=0;i<ranks.length;i++){if(xp>=ranks[i].xp)idx=i}let rank=ranks[idx],next=ranks[idx+1],within=xp-rank.xp,span=next?next.xp-rank.xp:1,pct=next?Math.max(0,Math.min(100,within/span*100)):100;document.getElementById("rankTitle").textContent=rank.name;document.getElementById("rankCopy").textContent=rank.copy;document.getElementById("rankSymbol").textContent=rank.symbol;document.getElementById("xpCurrent").textContent=xp.toLocaleString("es-MX")+" XP";document.getElementById("xpNext").textContent=next?(next.xp-xp)+" XP para el siguiente rango":"Rango máximo alcanzado";document.getElementById("xpbar").style.width=pct+"%";const badges=[{icon:"🚀",name:"Primera salida",desc:"Valida tu primer paso",ok:snapshot.done>=1},{icon:"🧩",name:"Mente analítica",desc:"10 pasos dominados",ok:snapshot.done>=10},{icon:"🏅",name:"Misión en limpio",desc:"Completa una misión",ok:snapshot.mastered>=1},{icon:"🗺️",name:"Explorador",desc:"Completa 3 misiones",ok:snapshot.mastered>=3},{icon:"🎯",name:"Objetivos extra",desc:"Completa 3 desafíos secundarios",ok:snapshot.side>=3},{icon:"📐",name:"Manos a la obra",desc:"25 pasos dominados",ok:snapshot.done>=25},{icon:"🧠",name:"Pensamiento MSA",desc:"50 pasos dominados",ok:snapshot.done>=50},{icon:"👑",name:"Leyenda KitCube",desc:"Completa todas las misiones",ok:snapshot.mastered===moduleIds.length}];document.getElementById("achievements").innerHTML=badges.map(b=>`<div class="achievement ${b.ok?"unlocked":""}" title="${esc(b.desc)}"><span class="medal">${b.icon}</span><span><b>${b.name}</b><small>${b.ok?"Desbloqueada":b.desc}</small></span></div>`).join("");}
-function updateGlobal(){let a=progressSnapshot(),pct=a.pct,unlocked=moduleIds.filter(isModuleUnlocked).length,next=moduleIds.find(id=>!missionDone(id));document.getElementById("doneCount").textContent=a.done;document.getElementById("totalCount").textContent=a.total;document.getElementById("moduleCount").textContent=a.mastered+"/"+moduleIds.length;document.getElementById("score").textContent=a.xp.toLocaleString("es-MX")+" XP";document.getElementById("globalbar").style.width=pct+"%";document.getElementById("globaltext").textContent=pct+"% de la operación completada · "+a.mastered+" de "+moduleIds.length+" misiones dominadas · "+a.side+" objetivos secundarios logrados.";document.getElementById("overall").textContent=pct+"% completado";document.getElementById("missionsUnlocked").textContent=unlocked+"/"+moduleIds.length;document.getElementById("sideCompleted").textContent=a.side;document.getElementById("nextMission").textContent=next??"FIN";updateGamification(a);renderTabs();}
+function updateGlobal(){let a=progressSnapshot(),pct=a.pct,unlocked=moduleIds.filter(isModuleUnlocked).length,next=moduleIds.find(id=>!missionDone(id));document.getElementById("doneCount").textContent=a.done;document.getElementById("totalCount").textContent=a.total;document.getElementById("moduleCount").textContent=a.mastered+"/"+moduleIds.length;document.getElementById("score").textContent=a.xp.toLocaleString("es-MX")+" XP";document.getElementById("globalbar").style.width=pct+"%";document.getElementById("globaltext").textContent=pct+"% de la operación completada · "+a.mastered+" de "+moduleIds.length+" misiones dominadas · "+a.side+" objetivos secundarios logrados.";document.getElementById("overall").textContent=pct+"% completado";document.getElementById("missionsUnlocked").textContent=unlocked+"/"+moduleIds.length;document.getElementById("sideCompleted").textContent=a.side;document.getElementById("nextMission").textContent=next??"FIN";updateGamification(a);renderTabs();renderMissionCatalog();}
 function save(){localStorage.setItem(studentKey("attempts"),JSON.stringify(attempts));localStorage.setItem(studentKey("completed"),JSON.stringify(completed));localStorage.setItem(studentKey("side_completed"),JSON.stringify(sideCompleted));localStorage.setItem(studentKey("side_answers"),JSON.stringify(sideAnswers));}
-function selectModule(id){if(!isModuleUnlocked(id)){showToast("SECTOR BLOQUEADO · Completa la misión anterior para abrirlo.");return;}current=id;renderModule();window.scrollTo({top:0,behavior:"smooth"})}
-function prevModule(){let i=moduleIds.indexOf(current);selectModule(moduleIds[Math.max(0,i-1)])}
+function selectModule(id){
+ if(!isModuleUnlocked(id)){showToast("ESTACIÓN BLOQUEADA · Completa la misión anterior para abrirla.");return;}
+ current=id;document.body.classList.add("mission-open");renderModule();renderMissionCatalog();window.scrollTo({top:0,behavior:"smooth"});
+}
+function goDashboard(){document.body.classList.remove("mission-open");renderMissionCatalog();updateGlobal();window.scrollTo({top:0,behavior:"smooth"});}
+function prevModule(){let i=moduleIds.indexOf(current);if(i<=0){goDashboard();return;}selectModule(moduleIds[i-1])}
 function nextModule(){let i=moduleIds.indexOf(current),next=moduleIds[Math.min(moduleIds.length-1,i+1)];if(next===current){showToast("Has llegado al último sector disponible.");return;}selectModule(next)}
 function resetCurrent(){if(!confirm("¿Reiniciar todos los pasos, intentos y el objetivo extra de este módulo?"))return;raw[current].steps.forEach((s,i)=>{delete completed[current+"_"+i];delete attempts[current+"_"+i]});delete sideCompleted[current];delete sideAnswers[current];save();renderModule();showToast("Misión reiniciada · puedes volver a conquistarla.");}
 
@@ -801,8 +965,10 @@ function normalizeStudentName(value){return String(value||"").trim().normalize("
 function updateStudentHud(){if(!activeProfile)return;const name=activeProfile.name||"Alumno";document.getElementById("studentName").textContent=name;document.getElementById("studentIdLabel").textContent="PROGRESO PERSONAL";document.getElementById("studentAvatar").textContent=(name.trim()[0]||"A").toUpperCase();document.title="KitCube Academy · "+name;}
 function activateStudent(id,profile){activeStudent=id;activeProfile=profile;readStudentProgress();document.body.classList.add("authenticated");updateStudentHud();renderModule();updateGlobal();showAccessMessage("");}
 function loginStudent(event){event.preventDefault();const name=document.getElementById("loginName").value.trim(),normalized=normalizeStudentName(name);if(normalized.length<3){showAccessMessage("Escribe tu nombre completo para entrar.");return;}const id="nombre_"+normalized.replace(/\s+/g,"_");activateStudent(id,{name});}
-function logoutStudent(){activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated");document.getElementById("loginForm").reset();document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
+function logoutStudent(){activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated","mission-open");document.getElementById("loginForm").reset();document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
 
 renderModule();
+renderMissionCatalog();
+updateGlobal();
 </script>
 </body></html>
