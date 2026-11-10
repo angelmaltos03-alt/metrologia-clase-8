@@ -124,6 +124,8 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
 @media(max-width:780px){.topmeta{display:flex;gap:6px}.topmeta .pill,.topmeta #overall{display:none}.student-mini{padding-right:6px}.student-mini>div:last-child{display:none}.logout-btn{padding:8px 9px}.brand{gap:8px}.login-gate{display:block}.login-scene{margin:8px auto 22px}.login-brand{margin-bottom:25px}.login-features{display:none}.login-card{margin:0 auto 24px}}
 @media(max-width:480px){.login-gate{padding:18px 13px}.login-title{font-size:39px}.login-desc{font-size:12px}.login-card{padding:21px 17px;border-radius:20px}.login-card h2{font-size:24px}.login-brand .cube{width:46px;height:46px}.login-brand strong{font-size:13px}.login-brand small{font-size:8px}.topmeta{gap:5px}.logout-btn{font-size:9px;padding:7px}}
 
+
+.authenticated .login-gate{display:none!important}
 </style>
 </head>
 <body>
@@ -369,10 +371,10 @@ function nextModule(){let i=moduleIds.indexOf(current),next=moduleIds[Math.min(m
 function resetCurrent(){if(!confirm("¿Reiniciar todos los pasos, intentos y el objetivo extra de este módulo?"))return;raw[current].steps.forEach((s,i)=>{delete completed[current+"_"+i];delete attempts[current+"_"+i]});delete sideCompleted[current];delete sideAnswers[current];save();renderModule();showToast("Misión reiniciada · puedes volver a conquistarla.");}
 
 function showAccessMessage(message){const el=document.getElementById("accessMessage");if(!el)return;el.textContent=message;el.className="access-message"+(message?" show":"");}
-function normalizeStudentName(value){return String(value||"").trim().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim().slice(0,70);}
+function normalizeStudentName(value){return String(value||"").trim().normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim().slice(0,70);}
 function updateStudentHud(){if(!activeProfile)return;const name=activeProfile.name||"Alumno";document.getElementById("studentName").textContent=name;document.getElementById("studentIdLabel").textContent="PROGRESO PERSONAL";document.getElementById("studentAvatar").textContent=(name.trim()[0]||"A").toUpperCase();document.title="KitCube Academy · "+name;}
 function activateStudent(id,profile){activeStudent=id;activeProfile=profile;readStudentProgress();document.body.classList.add("authenticated");updateStudentHud();renderModule();updateGlobal();showAccessMessage("");}
-function loginStudent(event){event.preventDefault();const name=document.getElementById("loginName").value.trim(),normalized=normalizeStudentName(name);if(normalized.length<3){showAccessMessage("Escribe tu nombre completo para entrar.");return;}const id="nombre_"+normalized.replace(/\\s+/g,"_");activateStudent(id,{name});}
+function loginStudent(event){event.preventDefault();const name=document.getElementById("loginName").value.trim(),normalized=normalizeStudentName(name);if(normalized.length<3){showAccessMessage("Escribe tu nombre completo para entrar.");return;}const id="nombre_"+normalized.replace(/\s+/g,"_");activateStudent(id,{name});}
 function logoutStudent(){activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated");document.getElementById("loginForm").reset();document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
 
 renderModule();
