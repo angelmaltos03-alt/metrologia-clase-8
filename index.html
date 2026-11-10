@@ -66,10 +66,102 @@ main{max-width:1320px;margin:30px auto 0}
 @media(max-width:780px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.ops-brief{padding:17px}.ops-brief h3{font-size:18px}}
 @media(max-width:480px){.tabs{grid-template-columns:1fr}.tab{min-height:78px}.ops-brief-stats{grid-template-columns:repeat(3,1fr)}.ops-brief-stats b{font-size:19px}.mission-brief{grid-template-columns:1fr}.mission-reward{justify-self:start}.side-mission{padding:15px}}
 
+
+/* KITCUBE ACADEMY · immersive player access */
+:root{--neon:#6de7d3;--violet:#9c8cff;--gold:#ffd58a}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#86b4d008 1px,transparent 1px),linear-gradient(90deg,#86b4d008 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#0008,transparent 78%)}
+body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
+.login-gate{position:fixed;inset:0;z-index:1000;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.82fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(22px,5vw,76px);overflow:auto;background:radial-gradient(ellipse at 18% 20%,#1d4771 0,transparent 34%),radial-gradient(ellipse at 80% 78%,#285b5a55 0,transparent 36%),linear-gradient(135deg,#050d19,#0a1728 55%,#0b1b2b)}
+.login-gate:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 48%,#9cefe70a 49%,transparent 50%);background-size:9px 9px;pointer-events:none}
+.login-scene,.login-card{position:relative;z-index:1}
+.login-scene{max-width:680px;animation:loginRise .7s both}
+.login-brand{display:flex;align-items:center;gap:14px;margin-bottom:clamp(36px,7vh,80px)}
+.login-brand .cube{width:55px;height:55px;font-size:25px;border-radius:17px}
+.login-brand strong{display:block;font-size:16px;letter-spacing:.22em}
+.login-brand small{display:block;color:#91abc8;font-size:9px;letter-spacing:.22em;margin-top:5px}
+.login-kicker{display:flex;align-items:center;gap:10px;color:#75e6d6;font-size:10px;letter-spacing:.22em;font-weight:900}
+.login-kicker:before{content:"";width:28px;height:1px;background:#75e6d6;box-shadow:0 0 12px #75e6d6}
+.login-title{font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.065em;margin:18px 0 20px;max-width:660px}
+.login-title span{display:block;color:transparent;background:linear-gradient(100deg,#84b9ff,#70e6d4 55%,#c3f1bf);background-clip:text;-webkit-background-clip:text}
+.login-desc{max-width:560px;color:#b5c7dc;font-size:15px;line-height:1.8}
+.login-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:32px;max-width:570px}
+.login-feature{padding:14px 15px;border:1px solid #34506a88;border-radius:15px;background:#0e2238aa;backdrop-filter:blur(12px)}
+.login-feature b{display:block;font-size:12px;color:#ecf8ff}
+.login-feature small{display:block;color:#8fa8c4;font-size:10px;margin-top:4px;line-height:1.45}
+.login-orbit{position:absolute;width:330px;height:330px;border:1px solid #7be3dc20;border-radius:50%;right:-110px;top:35%;box-shadow:0 0 80px #43c9bd0b,inset 0 0 80px #43c9bd0b;pointer-events:none}
+.login-orbit:before,.login-orbit:after{content:"";position:absolute;border:1px solid #7be3dc1d;border-radius:50%;inset:32px;transform:rotateX(68deg)}
+.login-orbit:after{inset:66px;transform:rotateY(68deg)}
+.login-card{width:100%;max-width:475px;justify-self:end;padding:clamp(23px,3vw,34px);border:1px solid #3b5976;background:linear-gradient(150deg,#132a43ed,#0b1b2ded 70%);border-radius:25px;box-shadow:0 28px 90px #0008,inset 0 1px #ffffff12;backdrop-filter:blur(20px);animation:loginRise .85s .08s both}
+.login-card:before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,transparent,#71e5d5,#8db7ff,transparent);box-shadow:0 0 18px #68e2d477}
+.login-card-head{margin-bottom:24px}
+.login-status{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #3c6d70;border-radius:99px;background:#113336;color:#91f0dc;font-size:9px;font-weight:900;letter-spacing:.15em}
+.login-status i{width:6px;height:6px;border-radius:50%;background:#6ef0bd;box-shadow:0 0 10px #6ef0bd}
+.login-card h2{font-size:27px;letter-spacing:-.04em;margin:15px 0 5px}
+.login-card-head p{margin:0;color:#9db3cc;font-size:12px}
+.access-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;background:#091625;border:1px solid #29435f;border-radius:13px;margin:22px 0}
+.access-tabs button{border:0;border-radius:9px;padding:10px;background:transparent;color:#91a9c4;font-size:11px;font-weight:800}
+.access-tabs button.active{background:linear-gradient(120deg,#274c71,#21575b);color:#f2fffd;box-shadow:inset 0 1px #ffffff15}
+.access-form{display:grid;gap:13px}
+.access-field{display:grid;gap:6px}
+.access-field label{color:#b9cbe0;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.access-field input{width:100%;min-width:0;border:1px solid #34516f;border-radius:12px;padding:13px 14px;background:#071625;color:#f4f8ff;outline:none;transition:border .2s,box-shadow .2s}
+.access-field input:focus{border-color:#70e3d4;box-shadow:0 0 0 3px #70e3d41b}
+.access-field input::placeholder{color:#607b98}
+.access-submit{margin-top:5px;width:100%;border:0;border-radius:12px;padding:14px 16px;background:linear-gradient(105deg,#83b5ff,#64e3d2);color:#08202a;font-weight:950;letter-spacing:.035em;box-shadow:0 9px 24px #4ebcb52b;transition:transform .2s,filter .2s}
+.access-submit:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.access-message{display:none;padding:10px 12px;border:1px solid #8b5558;background:#3b2029;color:#ffd3d5;border-radius:11px;font-size:11px}
+.access-message.show{display:block}
+.access-footnote{margin:17px 0 0;color:#7992ad;font-size:9px;line-height:1.55;text-align:center}
+.access-footnote strong{color:#b5cee6}
+.student-mini{display:flex;align-items:center;gap:9px;padding:5px 10px 5px 5px;border:1px solid #375371;border-radius:13px;background:#102238}
+.student-avatar{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,#79b2ff,#66e3d1);color:#08202a;font-weight:950}
+.student-mini b{display:block;color:#edf7ff;font-size:11px;max-width:125px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.student-mini small{display:block;color:#8ca8c4;font-size:9px}
+.logout-btn{border:1px solid #38516a;border-radius:10px;padding:8px 10px;background:#142940;color:#bfd2e8;font-size:10px;font-weight:800}
+.logout-btn:hover{border-color:#77ded2;color:#fff}
+@keyframes loginRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.login-gate{grid-template-columns:1fr;justify-items:center;gap:24px;padding:30px 18px}.login-scene{max-width:600px;text-align:center}.login-brand{justify-content:center;margin-bottom:25px}.login-kicker{justify-content:center}.login-title{font-size:clamp(38px,10vw,58px);margin:13px auto}.login-desc{margin:0 auto}.login-features{margin:22px auto 0}.login-card{justify-self:center;max-width:530px}.login-orbit{display:none}}
+@media(max-width:780px){.topmeta{display:flex;gap:6px}.topmeta .pill,.topmeta #overall{display:none}.student-mini{padding-right:6px}.student-mini>div:last-child{display:none}.logout-btn{padding:8px 9px}.brand{gap:8px}.login-gate{display:block}.login-scene{margin:8px auto 22px}.login-brand{margin-bottom:25px}.login-features{display:none}.login-card{margin:0 auto 24px}}
+@media(max-width:480px){.login-gate{padding:18px 13px}.login-title{font-size:39px}.login-desc{font-size:12px}.login-card{padding:21px 17px;border-radius:20px}.login-card h2{font-size:24px}.login-brand .cube{width:46px;height:46px}.login-brand strong{font-size:13px}.login-brand small{font-size:8px}.topmeta{gap:5px}.logout-btn{font-size:9px;padding:7px}}
+
 </style>
 </head>
 <body>
-<header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">MODO APRENDIZAJE</span><span id="overall">0% completado</span></div></div></header>
+
+<div class="login-gate" id="loginGate">
+ <div class="login-scene">
+  <div class="login-brand"><div class="cube">K</div><div><strong>KITCUBE ACADEMY</strong><small>METROLOGÍA · ESTADÍSTICA · MSA</small></div></div>
+  <div class="login-kicker">ACADEMIC GAME SYSTEM / 03</div>
+  <h1 class="login-title">Tu conocimiento.<span>Tu siguiente nivel.</span></h1>
+  <p class="login-desc">Entra al centro de operaciones de Alimentos Sierra Norte. Asume el rol de analista de calidad, completa desafíos, desbloquea sectores y construye tu reputación técnica misión por misión.</p>
+  <div class="login-features">
+   <div class="login-feature"><b>01 / Mapa de operaciones</b><small>Misiones encadenadas, estaciones bloqueadas y objetivos especiales.</small></div>
+   <div class="login-feature"><b>02 / Progresión RPG</b><small>XP, rangos, insignias y avance individual.</small></div>
+   <div class="login-feature"><b>03 / Entrenamiento activo</b><small>Problemas por etapas, pistas y retroalimentación inmediata.</small></div>
+   <div class="login-feature"><b>04 / Expediente personal</b><small>Tu avance se separa por perfil de alumno en este dispositivo.</small></div>
+  </div>
+  <div class="login-orbit"></div>
+ </div>
+ <section class="login-card" aria-label="Acceso de alumnos">
+  <div class="login-card-head"><span class="login-status"><i></i> SISTEMA DISPONIBLE · ACCESO DE ALUMNOS</span><h2>Accede a tu academia</h2><p>Identifícate para continuar tu operación.</p></div>
+  <div class="access-tabs"><button id="tabLogin" class="active" type="button" onclick="switchAccess('login')">Iniciar sesión</button><button id="tabRegister" type="button" onclick="switchAccess('register')">Crear perfil</button></div>
+  <form class="access-form" id="loginForm" onsubmit="loginStudent(event)">
+   <div class="access-field"><label for="loginId">Matrícula o ID de alumno</label><input id="loginId" autocomplete="username" maxlength="32" required placeholder="Ej. A2026001"></div>
+   <div class="access-field"><label for="loginPin">PIN de acceso</label><input id="loginPin" type="password" inputmode="numeric" autocomplete="current-password" minlength="4" maxlength="12" required placeholder="Tu PIN personal"></div>
+   <button class="access-submit" type="submit">ENTRAR AL CENTRO DE MANDO <span aria-hidden="true">→</span></button>
+  </form>
+  <form class="access-form hidden" id="registerForm" onsubmit="registerStudent(event)">
+   <div class="access-field"><label for="registerName">Nombre del alumno</label><input id="registerName" autocomplete="name" maxlength="70" required placeholder="Nombre y apellidos"></div>
+   <div class="access-field"><label for="registerId">Matrícula o ID de alumno</label><input id="registerId" autocomplete="username" maxlength="32" required placeholder="Crea o escribe tu identificador"></div>
+   <div class="access-field"><label for="registerPin">Crea tu PIN (4–12 caracteres)</label><input id="registerPin" type="password" inputmode="numeric" minlength="4" maxlength="12" required placeholder="No uses una contraseña importante"></div>
+   <div class="access-field"><label for="registerPin2">Confirma tu PIN</label><input id="registerPin2" type="password" inputmode="numeric" minlength="4" maxlength="12" required placeholder="Repite tu PIN"></div>
+   <button class="access-submit" type="submit">CREAR PERFIL Y COMENZAR <span aria-hidden="true">→</span></button>
+  </form>
+  <div class="access-message" id="accessMessage" role="status"></div>
+  <p class="access-footnote"><strong>Prototipo de aula:</strong> el perfil y el progreso se almacenan localmente en este navegador. No hay sincronización entre dispositivos ni autenticación centralizada todavía. No uses datos sensibles ni un PIN importante.</p>
+ </section>
+</div>
+<header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">ACADEMY MODE</span><span id="overall">0% completado</span><div class="student-mini"><span class="student-avatar" id="studentAvatar">A</span><div><b id="studentName">Alumno</b><small id="studentIdLabel">Perfil activo</small></div></div><button class="logout-btn" type="button" onclick="logoutStudent()">Salir</button></div></div></header>
 <main>
 <section class="hero">
  <div class="card"><div class="eyebrow">Aula práctica interactiva</div><h2>Operación Sierra Norte: misión calidad.</h2><p>El equipo de Calidad de Alimentos Sierra Norte necesita distinguir la variación real de las piezas del ruido del sistema de medición. Resuelve cada misión, demuestra tu procedimiento y gana reconocimiento técnico.</p><div class="progressbar"><i id="globalbar"></i></div><div class="note" id="globaltext">Tu avance se guarda en este dispositivo.</div></div>
@@ -226,7 +318,10 @@ const missionMeta={
 };
 
 let current=10, attempts={}, completed={}, sideCompleted={}, sideAnswers={};
-try{attempts=JSON.parse(localStorage.getItem("kitcube_attempts")||"{}");completed=JSON.parse(localStorage.getItem("kitcube_completed")||"{}");sideCompleted=JSON.parse(localStorage.getItem("kitcube_side_completed")||"{}");sideAnswers=JSON.parse(localStorage.getItem("kitcube_side_answers")||"{}")}catch(e){}
+let activeStudent="guest", activeProfile=null;
+function studentKey(part){return "kitcube_student_"+activeStudent+"_"+part;}
+function readStudentProgress(){try{attempts=JSON.parse(localStorage.getItem(studentKey("attempts"))||"{}");completed=JSON.parse(localStorage.getItem(studentKey("completed"))||"{}");sideCompleted=JSON.parse(localStorage.getItem(studentKey("side_completed"))||"{}");sideAnswers=JSON.parse(localStorage.getItem(studentKey("side_answers"))||"{}");}catch(e){attempts={};completed={};sideCompleted={};sideAnswers={};}} 
+readStudentProgress();
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function makeTable(t){if(!t)return"";return `<table class="data-table">${t.map((r,i)=>`<tr>${r.map(c=>i===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table>`}
 function missionDone(id){return raw[id].steps.every((st,i)=>!!completed[id+"_"+i])}
@@ -252,9 +347,9 @@ function renderModule(){
  updateSide();renderTabs();updateGlobal();renderSideMission();
 }
 function renderSideMission(){const meta=missionMeta[current],unlocked=missionDone(current),done=!!sideCompleted[current],draft=sideAnswers[current]||"",target=document.getElementById("sideMission");if(!target)return;target.innerHTML=`<section class="side-mission ${unlocked?"":"locked"}"><div class="eyebrow">OBJETIVO SECUNDARIO · ${esc(meta.code)}</div><h3>${done?"Objetivo extra completado":esc(meta.side)}</h3><p>${unlocked?"Ve más allá del cálculo: demuestra que puedes explicar la decisión como profesional de Calidad.":"Este objetivo se abre al completar todos los pasos de la misión principal."}</p>${unlocked?`<div class="answerrow"><textarea id="sideAnswer" class="writebox" placeholder="Redacta tu explicación con tus propias palabras…" oninput="saveSideDraft()">${esc(draft)}</textarea></div><div class="answerrow"><button class="hintbtn" onclick="sideHint()">Ver orientación</button><button class="action" onclick="checkSideMission()">Validar objetivo · +${meta.reward} XP</button></div><div class="feedback" id="sideFeedback"></div>${done?'<div class="callout">Recompensa conseguida. Tu respuesta y tu logro se conservan en este dispositivo.</div>':""}`:`<div class="locked-msg">🔒 Misión principal pendiente · completa los pasos de esta estación para activar el desafío adicional.</div>`}</section>`;}
-function saveSideDraft(){const el=document.getElementById("sideAnswer");if(el){sideAnswers[current]=el.value;localStorage.setItem("kitcube_side_answers",JSON.stringify(sideAnswers));}}
+function saveSideDraft(){const el=document.getElementById("sideAnswer");if(el){sideAnswers[current]=el.value;localStorage.setItem(studentKey("side_answers"),JSON.stringify(sideAnswers));}}
 function sideHint(){const meta=missionMeta[current],fb=document.getElementById("sideFeedback");fb.className="feedback hint";fb.innerHTML=`<b>Orientación del instructor:</b> ${esc(meta.sideHint)}`;}
-function checkSideMission(){const meta=missionMeta[current],el=document.getElementById("sideAnswer"),fb=document.getElementById("sideFeedback");if(!el||!fb)return;sideAnswers[current]=el.value;localStorage.setItem("kitcube_side_answers",JSON.stringify(sideAnswers));const answer=normalize(el.value),missing=meta.keys.filter(k=>!answer.includes(normalize(k))),alreadyDone=!!sideCompleted[current];if(missing.length===0){if(!alreadyDone){sideCompleted[current]=true;localStorage.setItem("kitcube_side_completed",JSON.stringify(sideCompleted));showToast(`OBJETIVO EXTRA COMPLETADO · +${meta.reward} XP`);}fb.className="feedback ok";fb.innerHTML=alreadyDone?"<b>¡Objetivo confirmado!</b> Tu logro ya estaba registrado; la recompensa no se duplica.":`<b>¡Objetivo secundario validado!</b> Explicación registrada. Has ganado ${meta.reward} XP adicionales.`;}else{fb.className="feedback no";fb.innerHTML=`<b>Tu idea va tomando forma.</b> Refuerza la explicación con estos conceptos: ${missing.map(esc).join(", ")}. Puedes editarla y volver a intentarlo.`;}updateGlobal();updateSide();}
+function checkSideMission(){const meta=missionMeta[current],el=document.getElementById("sideAnswer"),fb=document.getElementById("sideFeedback");if(!el||!fb)return;sideAnswers[current]=el.value;localStorage.setItem(studentKey("side_answers"),JSON.stringify(sideAnswers));const answer=normalize(el.value),missing=meta.keys.filter(k=>!answer.includes(normalize(k))),alreadyDone=!!sideCompleted[current];if(missing.length===0){if(!alreadyDone){sideCompleted[current]=true;localStorage.setItem(studentKey("side_completed"),JSON.stringify(sideCompleted));showToast(`OBJETIVO EXTRA COMPLETADO · +${meta.reward} XP`);}fb.className="feedback ok";fb.innerHTML=alreadyDone?"<b>¡Objetivo confirmado!</b> Tu logro ya estaba registrado; la recompensa no se duplica.":`<b>¡Objetivo secundario validado!</b> Explicación registrada. Has ganado ${meta.reward} XP adicionales.`;}else{fb.className="feedback no";fb.innerHTML=`<b>Tu idea va tomando forma.</b> Refuerza la explicación con estos conceptos: ${missing.map(esc).join(", ")}. Puedes editarla y volver a intentarlo.`;}updateGlobal();updateSide();}
 function isTextStep(step){return Array.isArray(step[3])}
 function check(i){
  const s=raw[current].steps[i], el=document.getElementById("ans"+i), fb=document.getElementById("fb"+i), val=el.value.trim();
@@ -276,11 +371,26 @@ function progressSnapshot(){let total=0,done=0,mastered=0,side=0;moduleIds.forEa
 const ranks=[{xp:0,name:"Aprendiz de laboratorio",symbol:"◇",copy:"Tu operación empieza aquí. Cada paso dominado construye tu criterio."},{xp:180,name:"Técnico de medición",symbol:"⌁",copy:"Ya dominas procedimientos y validas resultados con orden."},{xp:430,name:"Analista metrológico",symbol:"⌗",copy:"Identificas fuentes de variación y conectas los datos con sus causas."},{xp:760,name:"Especialista en estadística",symbol:"✳",copy:"Transformas mediciones en evidencia estadística."},{xp:1120,name:"Auditor MSA",symbol:"◈",copy:"Evalúas repetibilidad, reproducibilidad y desempeño del sistema."},{xp:1580,name:"Maestro KitCube",symbol:"✦",copy:"Conduces análisis completos y explicas decisiones técnicas."},{xp:2150,name:"Referente de calidad",symbol:"✺",copy:"Tu dominio integra cálculo, criterio y comunicación profesional."},{xp:2850,name:"Leyenda metrológica",symbol:"🏆",copy:"Has completado una operación de calidad de principio a fin."}];
 function updateGamification(snapshot){let xp=snapshot.xp,idx=0;for(let i=0;i<ranks.length;i++){if(xp>=ranks[i].xp)idx=i}let rank=ranks[idx],next=ranks[idx+1],within=xp-rank.xp,span=next?next.xp-rank.xp:1,pct=next?Math.max(0,Math.min(100,within/span*100)):100;document.getElementById("rankTitle").textContent=rank.name;document.getElementById("rankCopy").textContent=rank.copy;document.getElementById("rankSymbol").textContent=rank.symbol;document.getElementById("xpCurrent").textContent=xp.toLocaleString("es-MX")+" XP";document.getElementById("xpNext").textContent=next?(next.xp-xp)+" XP para el siguiente rango":"Rango máximo alcanzado";document.getElementById("xpbar").style.width=pct+"%";const badges=[{icon:"🚀",name:"Primera salida",desc:"Valida tu primer paso",ok:snapshot.done>=1},{icon:"🧩",name:"Mente analítica",desc:"10 pasos dominados",ok:snapshot.done>=10},{icon:"🏅",name:"Misión en limpio",desc:"Completa una misión",ok:snapshot.mastered>=1},{icon:"🗺️",name:"Explorador",desc:"Completa 3 misiones",ok:snapshot.mastered>=3},{icon:"🎯",name:"Objetivos extra",desc:"Completa 3 desafíos secundarios",ok:snapshot.side>=3},{icon:"📐",name:"Manos a la obra",desc:"25 pasos dominados",ok:snapshot.done>=25},{icon:"🧠",name:"Pensamiento MSA",desc:"50 pasos dominados",ok:snapshot.done>=50},{icon:"👑",name:"Leyenda KitCube",desc:"Completa todas las misiones",ok:snapshot.mastered===moduleIds.length}];document.getElementById("achievements").innerHTML=badges.map(b=>`<div class="achievement ${b.ok?"unlocked":""}" title="${esc(b.desc)}"><span class="medal">${b.icon}</span><span><b>${b.name}</b><small>${b.ok?"Desbloqueada":b.desc}</small></span></div>`).join("");}
 function updateGlobal(){let a=progressSnapshot(),pct=a.pct,unlocked=moduleIds.filter(isModuleUnlocked).length,next=moduleIds.find(id=>!missionDone(id));document.getElementById("doneCount").textContent=a.done;document.getElementById("totalCount").textContent=a.total;document.getElementById("moduleCount").textContent=a.mastered+"/"+moduleIds.length;document.getElementById("score").textContent=a.xp.toLocaleString("es-MX")+" XP";document.getElementById("globalbar").style.width=pct+"%";document.getElementById("globaltext").textContent=pct+"% de la operación completada · "+a.mastered+" de "+moduleIds.length+" misiones dominadas · "+a.side+" objetivos secundarios logrados.";document.getElementById("overall").textContent=pct+"% completado";document.getElementById("missionsUnlocked").textContent=unlocked+"/"+moduleIds.length;document.getElementById("sideCompleted").textContent=a.side;document.getElementById("nextMission").textContent=next??"FIN";updateGamification(a);renderTabs();}
-function save(){localStorage.setItem("kitcube_attempts",JSON.stringify(attempts));localStorage.setItem("kitcube_completed",JSON.stringify(completed));localStorage.setItem("kitcube_side_completed",JSON.stringify(sideCompleted));localStorage.setItem("kitcube_side_answers",JSON.stringify(sideAnswers));}
+function save(){localStorage.setItem(studentKey("attempts"),JSON.stringify(attempts));localStorage.setItem(studentKey("completed"),JSON.stringify(completed));localStorage.setItem(studentKey("side_completed"),JSON.stringify(sideCompleted));localStorage.setItem(studentKey("side_answers"),JSON.stringify(sideAnswers));}
 function selectModule(id){if(!isModuleUnlocked(id)){showToast("SECTOR BLOQUEADO · Completa la misión anterior para abrirlo.");return;}current=id;renderModule();window.scrollTo({top:0,behavior:"smooth"})}
 function prevModule(){let i=moduleIds.indexOf(current);selectModule(moduleIds[Math.max(0,i-1)])}
 function nextModule(){let i=moduleIds.indexOf(current),next=moduleIds[Math.min(moduleIds.length-1,i+1)];if(next===current){showToast("Has llegado al último sector disponible.");return;}selectModule(next)}
 function resetCurrent(){if(!confirm("¿Reiniciar todos los pasos, intentos y el objetivo extra de este módulo?"))return;raw[current].steps.forEach((s,i)=>{delete completed[current+"_"+i];delete attempts[current+"_"+i]});delete sideCompleted[current];delete sideAnswers[current];save();renderModule();showToast("Misión reiniciada · puedes volver a conquistarla.");}
-renderModule();
+
+const ACCOUNT_STORE="kitcube_academy_accounts_v1";
+const SESSION_STORE="kitcube_academy_session_v1";
+function switchAccess(mode){const isLogin=mode==="login";document.getElementById("loginForm").classList.toggle("hidden",!isLogin);document.getElementById("registerForm").classList.toggle("hidden",isLogin);document.getElementById("tabLogin").classList.toggle("active",isLogin);document.getElementById("tabRegister").classList.toggle("active",!isLogin);showAccessMessage("");}
+function showAccessMessage(message,ok=false){const el=document.getElementById("accessMessage");if(!el)return;el.textContent=message;el.className="access-message"+(message?" show":"");if(ok){el.style.borderColor="#397d69";el.style.background="#103a31";el.style.color="#c4f9df";}else{el.style.borderColor="";el.style.background="";el.style.color="";}}
+function normalizeStudentId(value){return String(value||"").trim().toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9_-]/g,"").slice(0,32);}
+function readAccounts(){try{return JSON.parse(localStorage.getItem(ACCOUNT_STORE)||"{}");}catch(e){return {};}}
+async function hashStudentPin(pin){if(!window.crypto||!crypto.subtle)throw new Error("Tu navegador no permite crear un acceso local seguro. Actualiza el navegador e inténtalo otra vez.");const bytes=new TextEncoder().encode("KITCUBE-ACADEMY|"+pin);const digest=await crypto.subtle.digest("SHA-256",bytes);return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,"0")).join("");}
+function updateStudentHud(){if(!activeProfile)return;const name=activeProfile.name||"Alumno";document.getElementById("studentName").textContent=name;document.getElementById("studentIdLabel").textContent="ID · "+activeStudent;document.getElementById("studentAvatar").textContent=(name.trim()[0]||"A").toUpperCase();document.title="KitCube Academy · "+name;}
+function activateStudent(id,profile){activeStudent=id;activeProfile=profile;readStudentProgress();localStorage.setItem(SESSION_STORE,JSON.stringify({id}));document.body.classList.add("authenticated");updateStudentHud();renderModule();updateGlobal();showAccessMessage("");}
+async function loginStudent(event){event.preventDefault();const id=normalizeStudentId(document.getElementById("loginId").value),pin=document.getElementById("loginPin").value;if(!id||pin.length<4){showAccessMessage("Escribe tu matrícula o ID y un PIN válido.");return;}try{const accounts=readAccounts(),profile=accounts[id];if(!profile){showAccessMessage("No existe un perfil con ese identificador. Crea uno o revisa tu matrícula.");return;}const digest=await hashStudentPin(pin);if(digest!==profile.pinHash){showAccessMessage("El PIN no coincide. Revisa tus datos e inténtalo otra vez.");return;}activateStudent(id,profile);}catch(err){showAccessMessage(err.message||"No fue posible iniciar sesión.");}}
+async function registerStudent(event){event.preventDefault();const name=document.getElementById("registerName").value.trim(),id=normalizeStudentId(document.getElementById("registerId").value),pin=document.getElementById("registerPin").value,pin2=document.getElementById("registerPin2").value;if(name.length<3||!id){showAccessMessage("Escribe tu nombre y una matrícula o ID válido.");return;}if(pin.length<4||pin.length>12){showAccessMessage("El PIN debe tener entre 4 y 12 caracteres.");return;}if(pin!==pin2){showAccessMessage("Los PIN no coinciden. Comprueba ambos campos.");return;}const accounts=readAccounts();if(accounts[id]){showAccessMessage("Ese ID ya tiene un perfil. Inicia sesión o utiliza otra matrícula.");return;}try{const profile={name,pinHash:await hashStudentPin(pin),createdAt:new Date().toISOString()};accounts[id]=profile;localStorage.setItem(ACCOUNT_STORE,JSON.stringify(accounts));activateStudent(id,profile);}catch(err){showAccessMessage(err.message||"No se pudo crear el perfil.");}}
+function logoutStudent(){localStorage.removeItem(SESSION_STORE);activeStudent="guest";activeProfile=null;readStudentProgress();document.body.classList.remove("authenticated");document.getElementById("loginForm").reset();document.getElementById("registerForm").reset();switchAccess("login");document.title="KitCube Academy · Centro de operaciones";window.scrollTo({top:0,behavior:"smooth"});}
+function bootAccess(){const sessionRaw=localStorage.getItem(SESSION_STORE);if(!sessionRaw)return;try{const session=JSON.parse(sessionRaw),id=normalizeStudentId(session.id),profile=readAccounts()[id];if(profile)activateStudent(id,profile);else localStorage.removeItem(SESSION_STORE);}catch(e){localStorage.removeItem(SESSION_STORE);}}
+
+renderModule();bootAccess();
 </script>
 </body></html>
