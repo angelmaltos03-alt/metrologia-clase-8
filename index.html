@@ -201,6 +201,122 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
 @media(max-width:650px){.case-study-layout,.explorer-content{grid-template-columns:1fr}.case-study-photo,.case-study-photo img{min-height:180px;max-height:240px}.case-study-side{grid-column:auto;grid-template-columns:1fr 1fr}.piece-insight{grid-template-columns:1fr 1fr}.piece-insight>div:last-child{grid-column:1/-1}.explorer-foot b{display:block;margin-top:4px}}
 @media(max-width:420px){.case-study-side{grid-template-columns:1fr}.piece-selector{gap:4px}.piece-pick{padding:8px 2px}.piece-pick b{font-size:12px}.variance-explorer{padding:11px}.explorer-head h3{font-size:14px}}
 
+
+/* RESPONSIVE 3.1 — desktop, tablet and mobile */
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:320px;overflow-x:hidden}
+img{max-width:100%;height:auto}
+button,input,select,textarea{touch-action:manipulation}
+button,.tab,.hintbtn,.secondary,.action{min-height:42px}
+main{width:min(100% - 32px,1480px);padding-left:0;padding-right:0}
+.brand,.journey,.ops-brief,.layout,.hero,.case-study-layout,.explorer-content{min-width:0}
+.hero>.card,.journey-main,.achievement-area,.ops-brief-left,.workspace,.side{min-width:0}
+.tabs{scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.tab{scroll-snap-align:start;flex:0 0 auto;max-width:min(270px,82vw);white-space:normal;text-align:left}
+.data-table{max-width:100%;overscroll-behavior-x:contain}
+.step,.case-study-panel,.variance-explorer,.journey,.ops-brief{min-width:0;overflow-wrap:anywhere}
+.case-study-photo img,.mentor-card img,.spacer-photo img{max-width:100%}
+input,select,textarea{font-size:16px}
+@media(min-width:1200px){
+ main{margin-top:28px}
+ .layout{grid-template-columns:minmax(245px,290px) minmax(0,1fr);gap:20px}
+ .side{top:100px}
+ .case-study-layout{grid-template-columns:minmax(260px,1.15fr) minmax(250px,1.1fr) minmax(180px,.72fr)}
+ .case-study-photo,.case-study-photo img{min-height:260px}
+ .step-body{padding:20px}
+}
+@media(min-width:781px) and (max-width:1199px){
+ main{width:calc(100% - 36px);margin-top:22px}
+ .hero{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr)}
+ .layout{grid-template-columns:minmax(220px,25%) minmax(0,1fr);gap:14px}
+ .case-study-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .case-study-side{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .case-study-photo,.case-study-photo img{min-height:210px}
+ .piece-insight{grid-template-columns:100px 120px minmax(0,1fr)}
+}
+@media(max-width:780px){
+ header{position:relative;padding:12px 16px}
+ .brand{align-items:center}
+ .topmeta{display:none}
+ main{width:calc(100% - 28px);margin:18px auto 0;padding-bottom:38px}
+ .hero{grid-template-columns:1fr;gap:12px}
+ .hero>.card:first-child{padding:22px}
+ .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .stat{padding:10px 8px}.stat b{font-size:20px}.stat span{font-size:9px;line-height:1.3}
+ .journey{grid-template-columns:1fr;gap:14px}
+ .ops-brief{grid-template-columns:1fr;gap:12px}
+ .ops-brief-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .layout{grid-template-columns:1fr;gap:12px}
+ .workspace{order:1}.side{order:2;position:static}
+ .side .callout{margin:9px 0}
+ .tabs{margin-right:-2px;padding-bottom:12px}
+ .module-head{display:block}
+ .module-head h2{font-size:clamp(20px,4vw,26px)}
+ .answerrow{flex-direction:row;flex-wrap:wrap}
+ .answerrow input,.answerrow select{flex:1 1 180px}
+ .answerrow button{flex:0 0 auto}
+ .case-study-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .case-study-side{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .explorer-content{grid-template-columns:1fr}
+ .piece-selector{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ header{padding:10px 13px}
+ .logo{gap:9px}.cube{width:36px;height:36px}
+ h1{font-size:18px}.sub{font-size:9px;letter-spacing:.09em}
+ main{width:calc(100% - 20px);margin-top:12px}
+ .card{padding:14px;border-radius:16px}
+ .hero>.card:first-child{padding:18px}
+ .hero h2{font-size:26px}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .stat b{font-size:22px}.stat span{font-size:10px}
+ .journey-head{align-items:center;gap:8px}
+ .achievement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ops-brief-stats{gap:7px}
+ .ops-brief-stats>div{padding:9px 6px}
+ .ops-brief-stats b{font-size:18px}
+ .ops-brief-stats span{font-size:8px}
+ .route-head{align-items:flex-start;gap:8px;flex-direction:column}
+ .tab{max-width:220px;padding:9px 11px}
+ .case-study-layout{grid-template-columns:1fr}
+ .case-study-photo,.case-study-photo img{min-height:190px;max-height:250px}
+ .case-study-side{grid-column:auto;grid-template-columns:1fr 1fr}
+ .mentor-card{grid-template-columns:58px minmax(0,1fr)}
+ .mentor-card img{width:58px;height:68px}
+ .spacer-photo img{width:56px;height:56px}
+ .explorer-head{align-items:flex-start}
+ .explorer-head h3{font-size:16px}
+ .piece-insight{grid-template-columns:1fr 1fr}
+ .piece-insight>div:last-child{grid-column:1/-1}
+ .step-top{gap:9px;padding:12px}
+ .step-top h3{font-size:13px}
+ .step-body{padding:13px}
+ .formula{font-size:12px;white-space:normal}
+ .answerrow{display:grid;grid-template-columns:minmax(0,1fr) auto}
+ .answerrow input,.answerrow select{grid-column:1/-1;width:100%}
+ .answerrow button{grid-column:1/-1;width:100%}
+ .footer-actions{position:sticky;bottom:8px;z-index:4;padding:8px;border:1px solid #34506c;border-radius:14px;background:#091827ed;backdrop-filter:blur(10px)}
+ .footer-actions button{flex:1;padding:10px 8px;font-size:12px}
+ .data-table{font-size:11px}
+ .data-table th,.data-table td{padding:7px 8px}
+}
+@media(max-width:380px){
+ main{width:calc(100% - 16px)}
+ .card{padding:12px}
+ .case-study-side{grid-template-columns:1fr}
+ .piece-selector{gap:4px}
+ .piece-pick{padding:8px 2px}
+ .piece-pick b{font-size:11px}
+ .explorer-count{width:42px;height:42px}
+ .explorer-head p{font-size:9px}
+ .step-top .state{font-size:9px}
+ .footer-actions button{font-size:11px}
+}
+@media(hover:none){
+ .piece-pick:hover,.case-study-photo:hover img{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -210,7 +326,7 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
   <div class="login-brand"><div class="cube">K</div><div><strong>KITCUBE ACADEMY</strong><small>METROLOGÍA · ESTADÍSTICA · MSA</small></div></div>
   <div class="login-kicker">ACADEMIC GAME SYSTEM / 03</div>
   <h1 class="login-title">Tu conocimiento.<span>Tu siguiente nivel.</span></h1>
-  <p class="login-desc">Entra al centro de operaciones de Alimentos Sierra Norte. Asume el rol de analista de calidad, completa desafíos, desbloquea sectores y construye tu reputación técnica misión por misión.</p>
+  <p class="login-desc">Entra al centro de operaciones de una planta de maquinado CNC. Asume el rol de analista de metrología, inspecciona piezas, completa desafíos y desbloquea nuevas misiones.</p>
   <div class="login-features">
    <div class="login-feature"><b>01 / Mapa de operaciones</b><small>Misiones encadenadas, estaciones bloqueadas y objetivos especiales.</small></div>
    <div class="login-feature"><b>02 / Progresión RPG</b><small>XP, rangos, insignias y avance individual.</small></div>
@@ -232,7 +348,7 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
 <header><div class="brand"><div class="logo"><div class="cube">K</div><div><h1>KITCUBE</h1><div class="sub">LABORATORIO DE METROLOGÍA · ESTADÍSTICA · MSA</div></div></div><div class="topmeta"><span class="pill">ACADEMY MODE</span><span id="overall">0% completado</span><div class="student-mini"><span class="student-avatar" id="studentAvatar">A</span><div><b id="studentName">Alumno</b><small id="studentIdLabel">Perfil activo</small></div></div><button class="logout-btn" type="button" onclick="logoutStudent()">Salir</button></div></div></header>
 <main>
 <section class="hero">
- <div class="card"><div class="eyebrow">Aula práctica interactiva</div><h2>Operación Sierra Norte: misión calidad.</h2><p>El equipo de Calidad de Alimentos Sierra Norte necesita distinguir la variación real de las piezas del ruido del sistema de medición. Resuelve cada misión, demuestra tu procedimiento y gana reconocimiento técnico.</p><div class="progressbar"><i id="globalbar"></i></div><div class="note" id="globaltext">Tu avance se guarda en este dispositivo.</div></div>
+ <div class="card"><div class="eyebrow">Aula práctica interactiva</div><h2>Operación Precisión CNC: control de variación.</h2><p>En Mecánica de Precisión del Norte se fabrican tuercas, rondanas y ejes en máquinas CNC. El equipo de Calidad necesita analizar las dimensiones de las piezas y distinguir la variación del proceso del error del sistema de medición.</p><div class="progressbar"><i id="globalbar"></i></div><div class="note" id="globaltext">Tu avance se guarda en este dispositivo.</div></div>
  <div class="card stats"><div class="stat"><b id="doneCount">0</b><span>PASOS DOMINADOS</span></div><div class="stat"><b id="totalCount">0</b><span>PASOS DE LA OPERACIÓN</span></div><div class="stat"><b id="moduleCount">0/11</b><span>MISIONES COMPLETADAS</span></div><div class="stat"><b id="score">0 XP</b><span>RECOMPENSA ACUMULADA</span></div></div>
 </section>
 <section class="journey card" aria-label="Tu progresión KitCube">
@@ -244,7 +360,7 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
  </div>
  <div class="achievement-area"><div class="achievement-title">INSIGNIAS QUE PUEDES DESBLOQUEAR</div><div class="achievement-grid" id="achievements"></div></div>
 </section>
-<section class="ops-brief card" aria-label="Briefing de la operación"><div class="ops-brief-left"><div class="eyebrow">CENTRO DE MANDO · ALIMENTOS SIERRA NORTE</div><h3>Auditoría de medición de la línea de envasado</h3><p>La planta detectó diferencias en las mediciones de componentes de su equipo de alimentación. Tu escuadrón debe identificar las fuentes de variación y emitir una conclusión técnica antes de recomendar una decisión de calidad.</p></div><div class="ops-brief-stats"><div><b id="missionsUnlocked">1/11</b><span>MISIONES ABIERTAS</span></div><div><b id="sideCompleted">0</b><span>OBJETIVOS EXTRA</span></div><div><b id="nextMission">10</b><span>SIGUIENTE SECTOR</span></div></div></section>
+<section class="ops-brief card" aria-label="Briefing de la operación"><div class="ops-brief-left"><div class="eyebrow">CENTRO DE MANDO · MECÁNICA DE PRECISIÓN DEL NORTE</div><h3>Auditoría de medición de la área de maquinado CNC</h3><p>La planta detectó variación dimensional en un lote de rondanas y requiere verificar sus procesos de torneado y medición. Tu escuadrón debe identificar las fuentes de variación y emitir una conclusión técnica antes de recomendar una decisión de calidad.</p></div><div class="ops-brief-stats"><div><b id="missionsUnlocked">1/11</b><span>MISIONES ABIERTAS</span></div><div><b id="sideCompleted">0</b><span>OBJETIVOS EXTRA</span></div><div><b id="nextMission">10</b><span>SIGUIENTE SECTOR</span></div></div></section>
 <div class="route-head"><h3>Mapa de misiones</h3><span>Completa la misión principal para abrir el siguiente sector</span></div>
 <nav class="tabs" id="tabs" aria-label="Módulos del laboratorio"></nav>
 <div class="layout">
@@ -255,15 +371,15 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 const raw = {
- 10:{title:"Varianza y desviación estándar",desc:"Construye la varianza muestral desde las lecturas originales, con una guía paso a paso.",caseStudy:{"sector":"ALIMENTOS SIERRA NORTE · LÍNEA DE ENVASADO","title":"La banda transportadora está perdiendo su alineación","context":"En la planta Alimentos Sierra Norte, el área de mantenimiento detecta que una banda transportadora vibra y algunos envases avanzan de manera irregular. Al revisar el mecanismo, el técnico sospecha que los separadores metálicos que sostienen una guía no tienen un grosor uniforme.","why":"Si los separadores tienen grosores muy distintos, la guía puede quedar desnivelada. Eso puede provocar vibraciones, desgaste y problemas en el avance de los envases. Antes de cambiar las piezas, Calidad necesita describir qué tan dispersas son sus medidas.","mission":"El técnico selecciona cinco separadores y mide el grosor de cada uno en milímetros. Tu trabajo es analizar esa muestra: calcular su promedio, comparar cada pieza con ese promedio y obtener la varianza muestral para cuantificar la dispersión.","decision":"La varianza describe qué tan dispersas están estas cinco mediciones. Como el caso no proporciona límites de aceptación, no debes declarar que las piezas cumplen o incumplen una especificación; primero hay que entender la variación."},intro:"REGISTRO DE INSPECCIÓN · El técnico utiliza un instrumento de medición para revisar cinco separadores metálicos seleccionados de la línea. Estas son las lecturas registradas. Analiza los datos en el orden indicado; cada cálculo te ayudará a responder la pregunta de Calidad: ¿qué tanta diferencia existe entre los grosores de las piezas?",table:[["Pieza","Lectura (mm)","Diferencia respecto al promedio","Diferencia al cuadrado"],["Pieza 1","10","Pendiente","Pendiente"],["Pieza 2","12","Pendiente","Pendiente"],["Pieza 3","9","Pendiente","Pendiente"],["Pieza 4","14","Pendiente","Pendiente"],["Pieza 5","10","Pendiente","Pendiente"]],steps:[
+ 10:{title:"Varianza y desviación estándar",desc:"Construye la varianza muestral desde las lecturas originales, con una guía paso a paso.",caseStudy:{"sector":"MECÁNICA DE PRECISIÓN DEL NORTE · MAQUINADO CNC","title":"La lote de rondanas presenta variación dimensional","context":"En Mecánica de Precisión del Norte se fabrican tuercas, rondanas y componentes torneados mediante máquinas CNC. Durante la inspección de un lote de rondanas, Calidad detecta diferencias en el espesor de las piezas y solicita un análisis de la variación antes de liberar el lote.","why":"Si el espesor de las rondanas varía demasiado, el ensamble puede presentar holguras, interferencias o una distribución irregular de la carga. El equipo de Calidad necesita cuantificar la dispersión y después contrastarla con el plano y las tolerancias de ingeniería.","mission":"El inspector selecciona cinco rondanas del lote y mide su espesor con un micrómetro. Analiza las cinco lecturas: calcula el promedio, determina cuánto se aleja cada pieza de él y obtiene la varianza muestral para cuantificar la dispersión del proceso.","decision":"La varianza describe la dispersión de esta muestra, pero no basta por sí sola para aceptar o rechazar el lote. Para tomar esa decisión se deben consultar el plano, los límites de tolerancia y el criterio de inspección establecido por la empresa."},intro:"REGISTRO DE INSPECCIÓN CNC · El inspector mide el espesor de cinco rondanas seleccionadas de un lote fabricado en CNC. Las lecturas están expresadas en milímetros. Analiza la muestra paso a paso para responder la pregunta de Calidad: ¿qué tanta variación existe entre las piezas producidas?",table:[["Pieza","Lectura (mm)","Diferencia respecto al promedio","Diferencia al cuadrado"],["Pieza 1","10","Pendiente","Pendiente"],["Pieza 2","12","Pendiente","Pendiente"],["Pieza 3","9","Pendiente","Pendiente"],["Pieza 4","14","Pendiente","Pendiente"],["Pieza 5","10","Pendiente","Pendiente"]],steps:[
  ["Identifica el número de observaciones","Cuenta cuántas piezas fueron medidas. Cada pieza aporta una lectura.","n = número de lecturas",5,0,"Hay cinco lecturas; por eso n = 5."],
  ["Suma todas las lecturas","Suma los cinco datos originales: 10 + 12 + 9 + 14 + 10.","Σxi = 10 + 12 + 9 + 14 + 10 (mm)",55,0,"La suma de las cinco lecturas es 55 mm."],
  ["Calcula el promedio muestral","Divide la suma de las lecturas entre el número de observaciones: 55 ÷ 5.","x̄ = Σxi / n = 55 / 5 (mm)",11,0,"El promedio es 11 mm. Utilizarás este valor como referencia para calcular cada diferencia."],
- ["Calcula la diferencia de la pieza 1","Resta el promedio a la primera lectura: 10 − 11.","x1 − x̄ = 10 − 11 (mm)",-1,0,"La primera lectura está 1 mm por debajo del promedio."],
- ["Calcula la diferencia de la pieza 2","Resta el promedio a la segunda lectura: 12 − 11.","x2 − x̄ = 12 − 11 (mm)",1,0,"La segunda lectura está 1 mm por encima del promedio."],
- ["Calcula la diferencia de la pieza 3","Resta el promedio a la tercera lectura: 9 − 11.","x3 − x̄ = 9 − 11 (mm)",-2,0,"La tercera lectura está 2 mm por debajo del promedio."],
+ ["Calcula la diferencia de la pieza 1","Resta el promedio a la primera lectura: 10 − 11.","x1 − x̄ = 10 − 11 (mm)",-1,0,"La primera rondana está 1 mm por debajo del espesor promedio."],
+ ["Calcula la diferencia de la pieza 2","Resta el promedio a la segunda lectura: 12 − 11.","x2 − x̄ = 12 − 11 (mm)",1,0,"La segunda rondana está 1 mm por encima del espesor promedio."],
+ ["Calcula la diferencia de la pieza 3","Resta el promedio a la tercera lectura: 9 − 11.","x3 − x̄ = 9 − 11 (mm)",-2,0,"La tercera rondana está 2 mm por debajo del espesor promedio."],
  ["Calcula la diferencia de la pieza 4","Resta el promedio a la cuarta lectura: 14 − 11.","x4 − x̄ = 14 − 11 (mm)",3,0,"La cuarta lectura está 3 mm por encima del promedio."],
- ["Calcula la diferencia de la pieza 5","Resta el promedio a la quinta lectura: 10 − 11.","x5 − x̄ = 10 − 11 (mm)",-1,0,"La quinta lectura está 1 mm por debajo del promedio. Observa que las diferencias con signo suman cero."],
+ ["Calcula la diferencia de la pieza 5","Resta el promedio a la quinta lectura: 10 − 11.","x5 − x̄ = 10 − 11 (mm)",-1,0,"La quinta rondana está 1 mm por debajo del espesor promedio. Observa que las diferencias con signo suman cero."],
  ["Eleva al cuadrado la diferencia de la pieza 1","La diferencia fue −1. Multiplica −1 × −1.","(−1)² (mm²)",1,0,"Al elevar al cuadrado, el resultado es positivo: 1 mm²."],
  ["Eleva al cuadrado la diferencia de la pieza 2","La diferencia fue +1. Multiplica 1 × 1.","(+1)² (mm²)",1,0,"El resultado es 1 mm²."],
  ["Eleva al cuadrado la diferencia de la pieza 3","La diferencia fue −2. Multiplica −2 × −2.","(−2)² (mm²)",4,0,"El resultado es 4 mm²."],
@@ -330,7 +446,7 @@ const raw = {
  ["Número de categorías distintas","Calcula 1.41 × (σP / σGRR).","ndc aproximado",22.87,0.1,"La guía suele reportar un entero por truncamiento: aproximadamente 22."],
  ["Interpreta el resultado","El sistema tiene %SV=6.15%, % tolerancia=29.24% y ndc≈22. ¿Qué conclusión es técnicamente prudente?","Escribe una conclusión mencionando propósito y criterio del cliente.",["propósito","criterio"],0,"%SV es bajo y ndc supera cinco, pero el % de tolerancia debe juzgarse contra el criterio del cliente y el riesgo."]
  ]},
- 17:{title:"Caso completo: medición de diámetro de ejes",desc:"Reconoce el diseño, la característica, la muestra y la tolerancia.",intro:"CASO INDUSTRIAL · Una planta mecaniza ejes y evalúa un micrómetro digital mediante un estudio cruzado equilibrado. Cinco piezas, tres operadores y dos repeticiones. Tolerancia: 19.90 a 20.10 mm. Datos originales (mm):",table:[["Pieza","A-T1","A-T2","B-T1","B-T2","C-T1","C-T2"],["P1","19.792","19.796","19.814","19.812","19.792","19.794"],["P2","19.896","19.898","19.906","19.910","19.896","19.894"],["P3","19.998","19.994","20.013","20.011","19.991","19.993"],["P4","20.097","20.099","20.111","20.107","20.091","20.095"],["P5","20.196","20.194","20.211","20.213","20.195","20.191"]],steps:[
+ 17:{title:"Caso completo: medición de diámetro de ejes CNC",desc:"Reconoce el diseño, la característica, la muestra y la tolerancia.",intro:"CASO INDUSTRIAL · Mecánica de Precisión del Norte mecaniza ejes en tornos CNC y evalúa un micrómetro digital mediante un estudio cruzado equilibrado. Cinco piezas, tres operadores y dos repeticiones. Tolerancia: 19.90 a 20.10 mm. Datos originales (mm):",table:[["Pieza","A-T1","A-T2","B-T1","B-T2","C-T1","C-T2"],["P1","19.792","19.796","19.814","19.812","19.792","19.794"],["P2","19.896","19.898","19.906","19.910","19.896","19.894"],["P3","19.998","19.994","20.013","20.011","19.991","19.993"],["P4","20.097","20.099","20.111","20.107","20.091","20.095"],["P5","20.196","20.194","20.211","20.213","20.195","20.191"]],steps:[
  ["Identifica la característica","¿Qué dimensión se está evaluando?","Escribe la característica",["diámetro"],0,"Se estudia el diámetro exterior de los ejes."],
  ["Identifica el instrumento","¿Qué instrumento utiliza el estudio?","Escribe el instrumento",["micrómetro"],0,"Todos utilizan el mismo micrómetro digital."],
  ["Identifica el tipo de diseño","Cada operador mide todas las piezas y repite cada combinación. ¿Qué diseño es?","Selecciona el diseño","Cruzado",0,"Los operadores comparten las mismas piezas: diseño cruzado."],
@@ -388,7 +504,7 @@ const missionMeta={
  13:{code:"M-04",zone:"Tribunal estadístico",name:"La evidencia decide",brief:"Las sumas de cuadrados no bastan. Convierte la información en grados de libertad, cuadrados medios, razones F y decisiones con valor p.",primary:"Construir la tabla ANOVA y tomar decisiones con α=0.05.",side:"Explica por qué cada efecto se compara con un cuadrado medio de referencia y qué significa p<0.05.",keys:["cuadrado medio","referencia","hipotesis"],sideHint:"No describas p como la probabilidad de que la hipótesis nula sea verdadera.",reward:40},
  14:{code:"M-05",zone:"Ingeniería del sistema",name:"Rastrear el ruido",brief:"La planta necesita saber cuánto ruido proviene del equipo, cuánto de las personas y cuánto de las diferencias reales entre piezas.",primary:"Estimar EV, PO, O, AV, GRR, PV y TV.",side:"¿Por qué se suman varianzas para combinar EV y AV, en lugar de sumar directamente las desviaciones estándar?",keys:["varianzas","desviaciones","raiz"],sideHint:"La combinación se hace sobre magnitudes cuadráticas; después se aplica la raíz para regresar a mm.",reward:40},
  15:{code:"M-06",zone:"Evaluación de desempeño",name:"El sistema bajo prueba",brief:"Compara el ruido de medición con la variación total y con el margen de tolerancia. El equipo directivo necesita una lectura sin confundir indicadores.",primary:"Calcular contribución, %SV, % tolerancia y ndc.",side:"Explica por qué un %SV bajo no garantiza por sí solo que el sistema sea adecuado respecto a la tolerancia.",keys:["sv","tolerancia","cliente"],sideHint:"El %SV compara con variación total; el % de tolerancia compara el ancho del sistema contra especificación y criterio del cliente.",reward:40},
- 17:{code:"M-07",zone:"Línea de envasado",name:"Abrir el expediente",brief:"Alimentos Sierra Norte entrega el expediente del diámetro de los ejes que alimentan su línea. Define característica, instrumento, diseño y tamaño del estudio.",primary:"Reconocer el diseño cruzado, las 5 piezas, 3 operadores, 2 repeticiones y 30 lecturas.",side:"Resume el diseño del estudio e indica cómo se relacionan piezas, operadores y repeticiones.",keys:["p=5","o=3","r=2","30"],sideHint:"Indica p=5, o=3, r=2 y calcula p×o×r.",reward:40},
+ 17:{code:"M-07",zone:"Maquinado CNC",name:"Abrir el expediente",brief:"Mecánica de Precisión del Norte entrega el expediente del diámetro de los ejes que alimentan su línea. Define característica, instrumento, diseño y tamaño del estudio.",primary:"Reconocer el diseño cruzado, las 5 piezas, 3 operadores, 2 repeticiones y 30 lecturas.",side:"Resume el diseño del estudio e indica cómo se relacionan piezas, operadores y repeticiones.",keys:["p=5","o=3","r=2","30"],sideHint:"Indica p=5, o=3, r=2 y calcula p×o×r.",reward:40},
  18:{code:"M-08",zone:"Auditoría de operadores",name:"¿Quién mide diferente?",brief:"Los promedios de los operadores no coinciden. Encuentra el patrón y plantea causas que deben comprobarse en piso.",primary:"Calcular y comparar los promedios de A, B y C.",side:"Propón dos aspectos del método que revisarías antes de concluir que un operador mide mal.",keys:["tecnica","alineacion"],sideHint:"Puedes mencionar técnica de contacto, alineación, fuerza aplicada o cumplimiento del procedimiento.",reward:40},
  19:{code:"M-09",zone:"Comité de calidad",name:"Construir la evidencia",brief:"Integra las cuatro fuentes en la tabla ANOVA y usa los valores p para distinguir los efectos detectables.",primary:"Completar SS, gl, MS y decisiones para piezas, operadores e interacción.",side:"Redacta una interpretación que diferencie un efecto significativo de uno no significativo sin afirmar que este último es cero.",keys:["significativo","evidencia","cero"],sideHint:"Usa la idea de rechazar o no rechazar la hipótesis nula; no significativo no demuestra ausencia absoluta.",reward:40},
  20:{code:"M-10",zone:"Mapa de componentes",name:"Cuantificar cada fuente",brief:"Convierte la tabla ANOVA en componentes de varianza y compara el ruido del sistema con la señal entre piezas.",primary:"Calcular EV, AV, GRR, PV y TV, primero como varianzas y después como desviaciones estándar.",side:"Explica el orden correcto para combinar dos componentes de variación y obtener una desviación estándar total.",keys:["varianzas","sumar","raiz"],sideHint:"Suma las varianzas; al resultado aplícale raíz cuadrada.",reward:40},
@@ -416,14 +532,14 @@ function inputFor(step,i){
  if(Array.isArray(expected)) return `<textarea id="ans${i}" class="writebox" placeholder="Escribe tu explicación o conclusión técnica…"></textarea>`;
  return `<input id="ans${i}" type="number" step="any" inputmode="decimal" placeholder="Escribe tu resultado numérico">`;
 }
-const moduleCaseNotes={10:["Primero define el tamaño de la muestra: son cinco separadores seleccionados para inspección, no necesariamente todos los separadores de la planta.","La suma reúne todas las mediciones en un solo total. Después se dividirá entre cinco para obtener un grosor promedio representativo de esta muestra.","El promedio de 11 mm será la referencia para comparar cada separador. No significa que todos midan exactamente 11 mm.","Compara el primer separador con el grosor promedio. El signo negativo indica que mide menos que el promedio.","Compara el segundo separador con el grosor promedio. Un signo positivo indica que mide más que el promedio.","Compara el tercer separador con el grosor promedio. Conserva el signo: todavía no debes elevar al cuadrado.","Compara el cuarto separador con el grosor promedio. Esta diferencia es la más grande de la muestra.","Compara el quinto separador con el grosor promedio. Al sumar las cinco diferencias con signo obtendrás cero, porque están medidas respecto de la media.","Al cuadrar una diferencia negativa, el resultado deja de ser negativo. Así se evita que las diferencias menores y mayores se cancelen.","El segundo separador está 1 mm por encima del promedio; al cuadrar su diferencia aporta 1 mm² a la variación.","El tercer separador está 2 mm por debajo del promedio; su diferencia al cuadrado aporta 4 mm².","El cuarto separador está 3 mm por encima del promedio; por eso aporta 9 mm², la mayor contribución individual.","El quinto separador aporta 1 mm², igual que el primero, porque ambos se encuentran a 1 mm del promedio.","Al sumar los cuadrados obtienes una medida conjunta de la dispersión de los cinco separadores. Las diferencias grandes pesan más porque se elevan al cuadrado.","Se resta uno porque el promedio se estimó con la misma muestra y queda un grado de libertad menos para calcular la variación alrededor de esa media.","Divide la suma de cuadrados entre los cuatro grados de libertad. Esta es la varianza de la muestra; sus unidades son mm² porque las diferencias se elevaron al cuadrado.","La desviación estándar vuelve a expresar la dispersión en milímetros, la misma unidad usada para medir los separadores. Esto facilita explicar el resultado a Mantenimiento.","En este caso, una desviación estándar de 2 mm indica dispersión alrededor del promedio de 11 mm. Para decidir si esa variación es aceptable, Calidad tendría que compararla con una tolerancia o criterio técnico definido."]};
-function renderCaseStudy(m){if(!m.caseStudy)return '';const c=m.caseStudy;return '<section class="case-study-panel"><div class="case-study-top"><span class="case-study-tag">CASO DE ESTUDIO APLICADO</span><span class="case-study-sector">'+esc(c.sector)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-study-layout"><figure class="case-study-photo"><img src="assets/kitcube-factory.webp" alt="Línea de envasado de Alimentos Sierra Norte con una banda transportadora"><figcaption><i></i> INSPECCIÓN EN PLANTA · LÍNEA 02</figcaption></figure><div class="case-study-story"><article><b>Situación en planta</b><p>'+esc(c.context)+'</p></article><article><b>¿Por qué importa?</b><p>'+esc(c.why)+'</p></article><article class="case-story-mission"><b>Tu misión como analista</b><p>'+esc(c.mission)+'</p></article><article class="case-story-boundary"><b>Alcance de tu conclusión</b><p>'+esc(c.decision)+'</p></article></div><aside class="case-study-side"><div class="mentor-card"><img src="assets/kitcube-mentor.webp" alt="Guía visual del laboratorio KitCube"><div><b>Consejo del analista</b><p>Primero entiende qué representa cada dato. Después realiza la operación y explica qué significa para la planta.</p></div></div><div class="spacer-photo"><img src="assets/kitcube-spacers.webp" alt="Separadores metálicos seleccionados para inspección"><div><b>Componente en inspección</b><span>Separadores metálicos · grosor en mm</span></div></div></aside></div></section>';}
+const moduleCaseNotes={10:["Primero define el tamaño de la muestra: son cinco rondanas seleccionados para inspección, no necesariamente todos los separadores de la planta.","La suma reúne todas las mediciones en un solo total. Después se dividirá entre cinco para obtener un espesor promedio representativo de esta muestra.","El promedio de 11 mm será la referencia para comparar cada rondana. No significa que todos midan exactamente 11 mm.","Compara la primera rondana con el grosor promedio. El signo negativo indica que mide menos que el promedio.","Compara la segunda rondana con el grosor promedio. Un signo positivo indica que mide más que el promedio.","Compara la tercera rondana con el grosor promedio. Conserva el signo: todavía no debes elevar al cuadrado.","Compara la cuarta rondana con el grosor promedio. Esta diferencia es la más grande de la muestra.","Compara la quinta rondana con el grosor promedio. Al sumar las cinco diferencias con signo obtendrás cero, porque están medidas respecto de la media.","Al cuadrar una diferencia negativa, el resultado deja de ser negativo. Así se evita que las diferencias menores y mayores se cancelen.","La segunda rondana está 1 mm por encima del promedio; al cuadrar su diferencia aporta 1 mm² a la variación.","La tercera rondana está 2 mm por debajo del promedio; su diferencia al cuadrado aporta 4 mm².","La cuarta rondana está 3 mm por encima del promedio; por eso aporta 9 mm², la mayor contribución individual.","La quinta rondana aporta 1 mm², igual que el primero, porque ambos se encuentran a 1 mm del promedio.","Al sumar los cuadrados obtienes una medida conjunta de la dispersión de los cinco separadores. Las diferencias grandes pesan más porque se elevan al cuadrado.","Se resta uno porque el promedio se estimó con la misma muestra y queda un grado de libertad menos para calcular la variación alrededor de esa media.","Divide la suma de cuadrados entre los cuatro grados de libertad. Esta es la varianza de la muestra; sus unidades son mm² porque las diferencias se elevaron al cuadrado.","La desviación estándar vuelve a expresar la dispersión en milímetros, la misma unidad utilizada para medir el espesor de las rondanas. Esto facilita comunicar el resultado al área de Producción y Calidad.","En este caso, una desviación estándar de 2 mm indica dispersión alrededor del promedio de 11 mm. Para decidir si esa variación es aceptable, Calidad tendría que compararla con una tolerancia o criterio técnico definido."]};
+function renderCaseStudy(m){if(!m.caseStudy)return '';const c=m.caseStudy;return '<section class="case-study-panel"><div class="case-study-top"><span class="case-study-tag">CASO DE ESTUDIO APLICADO</span><span class="case-study-sector">'+esc(c.sector)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-study-layout"><figure class="case-study-photo"><img src="assets/kitcube-factory.webp" alt="Maquinado CNC de Mecánica de Precisión del Norte con una banda transportadora"><figcaption><i></i> INSPECCIÓN EN PLANTA · CNC · CELDA 02</figcaption></figure><div class="case-study-story"><article><b>Situación en planta</b><p>'+esc(c.context)+'</p></article><article><b>¿Por qué importa?</b><p>'+esc(c.why)+'</p></article><article class="case-story-mission"><b>Tu misión como analista</b><p>'+esc(c.mission)+'</p></article><article class="case-story-boundary"><b>Alcance de tu conclusión</b><p>'+esc(c.decision)+'</p></article></div><aside class="case-study-side"><div class="mentor-card"><img src="assets/kitcube-mentor.webp" alt="Guía visual del laboratorio KitCube"><div><b>Consejo del analista</b><p>En metrología CNC, cada milímetro cuenta. Identifica la característica, revisa el instrumento y analiza la variación antes de concluir.</p></div></div><div class="spacer-photo"><img src="assets/kitcube-spacers.webp" alt="Separadores metálicos seleccionados para inspección"><div><b>Pieza bajo inspección</b><span>Rondanas CNC · espesor en mm</span></div></div></aside></div></section>';}
 const varianceReadings=[10,12,9,14,10];
 let selectedVariancePiece=0;
 function renderVarianceExplorer(){
  const picks=varianceReadings.map((v,i)=>'<button type="button" class="piece-pick '+(i===selectedVariancePiece?'selected':'')+'" onclick="selectVariancePiece('+i+')"><span>P'+(i+1)+'</span><b>'+v+' <small>mm</small></b><em>VER</em></button>').join('');
  const rows=varianceReadings.map((v,i)=>'<div class="measurement-row"><span>P'+(i+1)+'</span><div class="measurement-track"><i class="measurement-dot '+(i===selectedVariancePiece?'active':'')+'" style="left:'+((v-8)/7*100)+'%"></i></div><b>'+v+' mm</b></div>').join('');
- return '<section class="variance-explorer" id="varianceExplorer"><div class="explorer-head"><div><span>LABORATORIO VISUAL · DATOS DEL CASO</span><h3>Explora los cinco separadores</h3><p>Selecciona una pieza para inspeccionar su lectura. Después de calcular el promedio, podrás comparar cada una con el valor central.</p></div><div class="explorer-count"><b>05</b><small>PIEZAS</small></div></div><div class="explorer-content"><div class="piece-selector">'+picks+'</div><div class="explorer-plot"><div class="plot-caption"><b>Mapa de mediciones</b><span>Escala de grosor · mm</span></div><div class="plot-rows">'+rows+'</div><div class="plot-axis"><span>8 mm</span><span>10 mm</span><span>12 mm</span><span>15 mm</span></div><div class="mean-legend" id="meanLegend"><i></i> Promedio de la muestra · 11 mm</div></div></div><div class="piece-insight" id="pieceInsight" aria-live="polite"></div><div class="explorer-foot">CONEXIÓN CON LA MISIÓN · <b>¿Qué tan lejos está cada pieza del grosor promedio?</b></div></section>';
+ return '<section class="variance-explorer" id="varianceExplorer"><div class="explorer-head"><div><span>LABORATORIO VISUAL · DATOS DEL CASO</span><h3>Explora las cinco rondanas</h3><p>Selecciona una pieza para inspeccionar su lectura. Después de calcular el promedio, podrás comparar cada una con el valor central.</p></div><div class="explorer-count"><b>05</b><small>PIEZAS</small></div></div><div class="explorer-content"><div class="piece-selector">'+picks+'</div><div class="explorer-plot"><div class="plot-caption"><b>Mapa de mediciones</b><span>Escala de espesor · mm</span></div><div class="plot-rows">'+rows+'</div><div class="plot-axis"><span>8 mm</span><span>10 mm</span><span>12 mm</span><span>15 mm</span></div><div class="mean-legend" id="meanLegend"><i></i> Promedio de la muestra · 11 mm</div></div></div><div class="piece-insight" id="pieceInsight" aria-live="polite"></div><div class="explorer-foot">CONEXIÓN CON LA MISIÓN · <b>¿Qué tan lejos está cada pieza del grosor promedio?</b></div></section>';
 }
 function selectVariancePiece(index){selectedVariancePiece=Math.max(0,Math.min(4,Number(index)||0));updateVarianceExplorer();}
 function updateVarianceExplorer(){
@@ -434,7 +550,7 @@ function updateVarianceExplorer(){
  const legend=document.getElementById("meanLegend");if(legend)legend.classList.toggle("visible",meanKnown);
  const status=meanKnown?(diff<0?Math.abs(diff)+" mm por debajo del promedio":diff>0?diff+" mm por encima del promedio":"igual al promedio"):"El promedio aún está pendiente. Completa «Calcula el promedio muestral» para descubrir la diferencia.";
  const insight=document.getElementById("pieceInsight");
- if(insight)insight.innerHTML='<div><span>PIEZA</span><strong>P'+(selectedVariancePiece+1)+'</strong></div><div><span>GROSOR MEDIDO</span><b>'+value+' mm</b></div><div><span>'+(meanKnown?'COMPARACIÓN CON x̄ = 11 mm':'SIGUIENTE DESCUBRIMIENTO')+'</span><b>'+status+'</b></div>';
+ if(insight)insight.innerHTML='<div><span>PIEZA</span><strong>P'+(selectedVariancePiece+1)+'</strong></div><div><span>ESPESOR MEDIDO</span><b>'+value+' mm</b></div><div><span>'+(meanKnown?'COMPARACIÓN CON x̄ = 11 mm':'SIGUIENTE DESCUBRIMIENTO')+'</span><b>'+status+'</b></div>';
 }
 function renderModule(){
  const m=raw[current];document.getElementById("moduleEyebrow").textContent="MÓDULO "+current;
