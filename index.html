@@ -627,6 +627,67 @@ body:not(.mission-open) #missionWorkspace{display:none!important}
 @media(max-width:780px){main{padding:20px 17px 55px}.hero{grid-template-columns:1fr}.hero>.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.journey{grid-template-columns:1fr}.achievement-area{border-left:0;border-top:1px solid var(--tower-border);padding:15px 0 0}.mission-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}#missionWorkspace{grid-template-columns:1fr}#missionWorkspace .workspace{grid-column:1;grid-row:1}#missionWorkspace .side{grid-column:1;grid-row:2;position:static}.case-study-layout{grid-template-columns:minmax(0,1.2fr) minmax(180px,.8fr)}.case-study-photo,.case-study-photo img{min-height:170px}}
 @media(max-width:580px){header{padding:11px 13px}.topmeta{gap:6px}.student-mini{display:none}main{padding:17px 13px 48px}.hero>.card:first-child{padding:22px}.hero>.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.journey{padding:17px}.achievement-area{border-top:1px solid var(--tower-border)}.ops-brief{padding:15px}.ops-brief-stats{min-width:0}.catalog-heading{align-items:flex-start}.catalog-heading h2{font-size:23px}.catalog-heading p{font-size:11px}.catalog-count{padding:8px 10px}.catalog-count strong{font-size:17px}.catalog-count span{font-size:7px}.mission-grid{grid-template-columns:1fr}.mission-card{padding:16px}.mission-card>p{min-height:0}.mission-card-bottom{align-items:flex-start;flex-direction:column}.mission-card-bottom button{width:100%}body.mission-open main{padding-top:16px}.module-heading-top{flex-wrap:wrap}.module-head h2{font-size:27px}#moduleIntro{gap:11px}.mission-overview{padding:16px}.mission-overview-top{align-items:flex-start}.mission-brief-text{font-size:12px}.case-study-panel{padding:15px}.case-study-layout{grid-template-columns:1fr}.case-study-photo,.case-study-photo img{min-height:180px;max-height:210px}.case-study-facts{grid-template-columns:1fr}.technical-file{padding:12px}.steps-heading{margin-top:21px}.steps-heading h3{font-size:18px}.step-top{padding:12px}.step-body{padding:13px}}
 
+
+/* KITCUBE 4.1 · OPTIMIZACIÓN DE ANCHO Y LEGIBILIDAD */
+main{width:min(1480px,calc(100% - 48px));max-width:1480px}
+header .brand{max-width:1480px}
+#missionWorkspace{grid-template-columns:minmax(0,1fr) 285px;gap:28px}
+#missionWorkspace .workspace{min-width:0;width:100%}
+#missionWorkspace .side{width:100%;max-width:none}
+.case-study-panel{padding:22px 24px}
+.case-study-layout{grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:24px}
+.case-study-copy h3{font-size:21px}
+.case-study-lead{font-size:14px;line-height:1.8;max-width:900px}
+.case-study-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.case-study-facts>div{padding:14px}
+.case-study-facts p{font-size:12px;line-height:1.75}
+.case-study-photo,.case-study-photo img{min-height:280px;max-height:360px}
+.case-study-photo img{height:100%;object-fit:cover}
+.mission-overview{padding:24px 26px}
+.mission-brief-text{font-size:14px;line-height:1.8}
+.mission-primary strong{font-size:14px}
+.technical-file{padding:16px 19px}
+.technical-file summary,.case-details summary{font-size:12px}
+.step-body>p{font-size:14px;line-height:1.8}
+.step .formula{font-size:13px;padding:15px 17px}
+.steps-heading p{font-size:12px}
+#missionWorkspace .side .mini{font-size:12px}
+#missionWorkspace .side p{font-size:12px;line-height:1.7}
+#missionWorkspace .side .callout{font-size:12px;line-height:1.7;padding:13px}
+/* A partir de una laptop/tablet, el panel lateral deja de comprimir la misión. */
+@media(max-width:1150px){
+ main{width:calc(100% - 40px);max-width:none}
+ #missionWorkspace{grid-template-columns:minmax(0,1fr);gap:18px}
+ #missionWorkspace .workspace{grid-column:1;grid-row:1}
+ #missionWorkspace .side{grid-column:1;grid-row:2;position:static;max-width:none}
+ #missionWorkspace .side .mini{display:inline-flex;flex-direction:column;align-items:flex-start;vertical-align:top;width:24%;min-width:130px;border:0;padding:8px 10px 8px 0}
+ #missionWorkspace .side .progressbar{margin-top:10px}
+ #missionWorkspace .side #sideDesc{max-width:780px}
+ #missionWorkspace .side .callout{max-width:780px}
+ .case-study-layout{grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:18px}
+ .case-study-facts{grid-template-columns:1fr}
+ .case-study-photo,.case-study-photo img{min-height:240px;max-height:300px}
+}
+@media(max-width:820px){
+ #missionWorkspace .side .mini{width:48%;min-width:0}
+ .case-study-layout{grid-template-columns:1fr}
+ .case-study-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .case-study-photo,.case-study-photo img{min-height:210px;max-height:260px}
+}
+@media(max-width:580px){
+ main{width:calc(100% - 24px)}
+ #missionWorkspace{gap:14px}
+ #missionWorkspace .side .mini{width:48%;padding:7px 6px 7px 0}
+ .case-study-panel{padding:16px}
+ .case-study-layout{gap:14px}
+ .case-study-facts{grid-template-columns:1fr}
+ .case-study-lead{font-size:13px}
+ .case-study-facts p{font-size:12px}
+ .case-study-photo,.case-study-photo img{min-height:190px;max-height:230px}
+ .mission-overview{padding:17px}
+ .step-body>p{font-size:13px}
+}
+
 </style>
 </head>
 <body>
