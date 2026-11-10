@@ -139,6 +139,68 @@ body:not(.authenticated) header,body:not(.authenticated) main{visibility:hidden}
 .case-step-note b{flex:none;color:#8ce9d9;font-size:9px;letter-spacing:.06em;text-transform:uppercase;max-width:105px}
 .case-step-note span{min-width:0}
 @media(max-width:580px){.case-study-panel{padding:14px}.case-study-panel h3{font-size:16px}.case-study-grid{grid-template-columns:1fr}.case-study-sector{width:100%}.case-step-note{display:block}.case-step-note b{display:block;max-width:none;margin-bottom:4px}}
+
+/* KITCUBE Academy: visual case study and interactive data explorer */
+.case-study-panel{padding:16px 17px 18px;overflow:hidden;background:linear-gradient(135deg,#122b44,#0d2033 57%,#12323b)}
+.case-study-layout{display:grid;grid-template-columns:minmax(210px,1.12fr) minmax(220px,1.15fr) minmax(150px,.68fr);gap:12px;align-items:stretch}
+.case-study-photo{position:relative;min-width:0;min-height:205px;margin:0;border:1px solid #4a8190;border-radius:14px;overflow:hidden;background:#071421}
+.case-study-photo img{width:100%;height:100%;min-height:205px;object-fit:cover;display:block;transition:transform .5s}
+.case-study-photo:hover img{transform:scale(1.045)}
+.case-study-photo:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#061421cc);pointer-events:none}
+.case-study-photo figcaption{position:absolute;z-index:1;left:11px;bottom:10px;color:#d9f8ef;font-size:8px;font-weight:900;letter-spacing:.13em}
+.case-study-photo figcaption i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#69f0bf;box-shadow:0 0 12px #69f0bf;margin-right:6px}
+.case-study-story{display:grid;gap:8px;align-content:start;min-width:0}
+.case-study-story article{padding:10px 11px;border:1px solid #35536f;border-radius:11px;background:#081a2a9c}
+.case-study-story b{display:block;margin-bottom:4px;color:#91e7db;font-size:9px;letter-spacing:.09em;text-transform:uppercase}
+.case-study-story p{margin:0;color:#c7d8e9;font-size:10px;line-height:1.55}
+.case-study-story .case-story-mission{background:linear-gradient(120deg,#143b3d,#122a3e);border-color:#418b83}
+.case-study-story .case-story-boundary{background:#18243a;border-style:dashed}
+.case-study-side{display:grid;gap:9px;align-content:start;min-width:0}
+.mentor-card{display:grid;grid-template-columns:76px 1fr;gap:8px;align-items:center;padding:8px;border:1px solid #3b5c7e;border-radius:12px;background:linear-gradient(135deg,#152e4a,#0b1d30)}
+.mentor-card img{width:76px;height:84px;object-fit:cover;object-position:center top;border-radius:9px}
+.mentor-card b{display:block;color:#a9dbff;font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+.mentor-card p{margin:5px 0 0;color:#c5d5e8;font-size:9px;line-height:1.45}
+.spacer-photo{display:flex;align-items:center;gap:8px;min-width:0;padding:7px;border:1px solid #3b5c7e;border-radius:12px;background:#081a2a}
+.spacer-photo img{width:68px;height:66px;flex:none;object-fit:cover;border-radius:8px}
+.spacer-photo b{display:block;color:#e5f3ff;font-size:9px}
+.spacer-photo span{display:block;margin-top:3px;color:#91a9c3;font-size:8px;line-height:1.4}
+.variance-explorer{margin:16px 0 5px;padding:15px;border:1px solid #3a6680;border-radius:16px;background:linear-gradient(140deg,#0d2035,#102a38 75%,#12283c);box-shadow:inset 0 1px #ffffff0a}
+.explorer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.explorer-head>div:first-child>span{color:#7ce4d1;font-size:9px;font-weight:950;letter-spacing:.16em}
+.explorer-head h3{margin:5px 0 3px;font-size:16px;color:#eff8ff}
+.explorer-head p{margin:0;max-width:620px;color:#a9bfd6;font-size:10px;line-height:1.5}
+.explorer-count{width:50px;height:50px;flex:none;border-radius:15px;display:grid;place-content:center;text-align:center;background:linear-gradient(140deg,#244b70,#175c5a);border:1px solid #6acbc0}
+.explorer-count b{font-size:19px;color:#f3fffb;line-height:1}.explorer-count small{font-size:7px;letter-spacing:.12em;color:#b7dedb}
+.explorer-content{display:grid;grid-template-columns:minmax(210px,.85fr) minmax(250px,1.15fr);gap:12px}
+.piece-selector{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-content:start}
+.piece-pick{display:grid;gap:5px;justify-items:center;padding:10px 4px;border:1px solid #34516d;border-radius:11px;background:#091827;color:#ccdaec;transition:transform .18s,border-color .18s,background .18s;min-width:0}
+.piece-pick:hover{transform:translateY(-2px);border-color:#6bdccb}
+.piece-pick.selected{background:linear-gradient(160deg,#16474d,#14304a);border-color:#6ce2cf;box-shadow:0 0 18px #55d6c01e}
+.piece-pick span{font-size:9px;font-weight:900;color:#8edfd3}
+.piece-pick b{font-size:14px;color:#f3f8ff;white-space:nowrap}.piece-pick small{font-size:8px;color:#9eb5cc}
+.piece-pick em{font-style:normal;font-size:7px;letter-spacing:.13em;color:#829eb9}
+.explorer-plot{padding:12px;border:1px solid #2d4864;border-radius:12px;background:#071725}
+.plot-caption{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}
+.plot-caption b{font-size:10px;color:#d9e9f7}.plot-caption span{font-size:8px;color:#8099b5}
+.plot-rows{display:grid;gap:8px}
+.measurement-row{display:grid;grid-template-columns:22px 1fr 44px;gap:8px;align-items:center}
+.measurement-row>span{font-size:9px;font-weight:900;color:#a5c1da}.measurement-row>b{text-align:right;font-size:9px;color:#e9f4ff}
+.measurement-track{height:9px;position:relative;border-radius:99px;background:repeating-linear-gradient(90deg,#203a54 0,#203a54 1px,transparent 1px,transparent 14.285%),#132940;border:1px solid #294964}
+.measurement-dot{position:absolute;top:50%;width:11px;height:11px;transform:translate(-50%,-50%);border:2px solid #b8d9ff;background:#5a94cc;border-radius:50%;box-shadow:0 0 0 3px #5a94cc20;transition:background .2s,box-shadow .2s}
+.measurement-dot.active{background:#6ef0d6;border-color:#e4fff8;box-shadow:0 0 0 4px #6ef0d62c,0 0 13px #6ef0d6}
+.plot-axis{display:flex;justify-content:space-between;margin:7px 48px 0 30px;color:#7f99b5;font-size:8px}
+.mean-legend{display:none;align-items:center;gap:7px;margin-top:10px;color:#9bf1d9;font-size:9px;font-weight:800}
+.mean-legend.visible{display:flex}.mean-legend i{width:8px;height:8px;border-radius:50%;background:#ffd47d;box-shadow:0 0 8px #ffd47d}
+.piece-insight{display:grid;grid-template-columns:110px 130px minmax(0,1fr);gap:9px;margin-top:10px;padding:10px;border:1px solid #375b79;border-radius:11px;background:#132b43}
+.piece-insight>div{min-width:0}.piece-insight span{display:block;color:#83a4c2;font-size:8px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.piece-insight b{display:block;margin-top:4px;color:#eff8ff;font-size:10px;line-height:1.35}
+.piece-insight strong{display:block;margin-top:3px;color:#85e9d8;font-size:18px}
+.explorer-foot{margin-top:10px;color:#7f9bb6;font-size:8px;letter-spacing:.1em}
+.explorer-foot b{color:#a9c9e4;font-size:9px;letter-spacing:0}
+@media(max-width:980px){.case-study-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.case-study-photo,.case-study-photo img{min-height:190px}.case-study-side{grid-column:1/-1;grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.case-study-layout,.explorer-content{grid-template-columns:1fr}.case-study-photo,.case-study-photo img{min-height:180px;max-height:240px}.case-study-side{grid-column:auto;grid-template-columns:1fr 1fr}.piece-insight{grid-template-columns:1fr 1fr}.piece-insight>div:last-child{grid-column:1/-1}.explorer-foot b{display:block;margin-top:4px}}
+@media(max-width:420px){.case-study-side{grid-template-columns:1fr}.piece-selector{gap:4px}.piece-pick{padding:8px 2px}.piece-pick b{font-size:12px}.variance-explorer{padding:11px}.explorer-head h3{font-size:14px}}
+
 </style>
 </head>
 <body>
@@ -355,14 +417,32 @@ function inputFor(step,i){
  return `<input id="ans${i}" type="number" step="any" inputmode="decimal" placeholder="Escribe tu resultado numérico">`;
 }
 const moduleCaseNotes={10:["Primero define el tamaño de la muestra: son cinco separadores seleccionados para inspección, no necesariamente todos los separadores de la planta.","La suma reúne todas las mediciones en un solo total. Después se dividirá entre cinco para obtener un grosor promedio representativo de esta muestra.","El promedio de 11 mm será la referencia para comparar cada separador. No significa que todos midan exactamente 11 mm.","Compara el primer separador con el grosor promedio. El signo negativo indica que mide menos que el promedio.","Compara el segundo separador con el grosor promedio. Un signo positivo indica que mide más que el promedio.","Compara el tercer separador con el grosor promedio. Conserva el signo: todavía no debes elevar al cuadrado.","Compara el cuarto separador con el grosor promedio. Esta diferencia es la más grande de la muestra.","Compara el quinto separador con el grosor promedio. Al sumar las cinco diferencias con signo obtendrás cero, porque están medidas respecto de la media.","Al cuadrar una diferencia negativa, el resultado deja de ser negativo. Así se evita que las diferencias menores y mayores se cancelen.","El segundo separador está 1 mm por encima del promedio; al cuadrar su diferencia aporta 1 mm² a la variación.","El tercer separador está 2 mm por debajo del promedio; su diferencia al cuadrado aporta 4 mm².","El cuarto separador está 3 mm por encima del promedio; por eso aporta 9 mm², la mayor contribución individual.","El quinto separador aporta 1 mm², igual que el primero, porque ambos se encuentran a 1 mm del promedio.","Al sumar los cuadrados obtienes una medida conjunta de la dispersión de los cinco separadores. Las diferencias grandes pesan más porque se elevan al cuadrado.","Se resta uno porque el promedio se estimó con la misma muestra y queda un grado de libertad menos para calcular la variación alrededor de esa media.","Divide la suma de cuadrados entre los cuatro grados de libertad. Esta es la varianza de la muestra; sus unidades son mm² porque las diferencias se elevaron al cuadrado.","La desviación estándar vuelve a expresar la dispersión en milímetros, la misma unidad usada para medir los separadores. Esto facilita explicar el resultado a Mantenimiento.","En este caso, una desviación estándar de 2 mm indica dispersión alrededor del promedio de 11 mm. Para decidir si esa variación es aceptable, Calidad tendría que compararla con una tolerancia o criterio técnico definido."]};
-function renderCaseStudy(m){if(!m.caseStudy)return '';const c=m.caseStudy;return '<section class="case-study-panel"><div class="case-study-top"><span class="case-study-tag">CASO DE ESTUDIO APLICADO</span><span class="case-study-sector">'+esc(c.sector)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-study-grid"><div><b>Situación en planta</b><p>'+esc(c.context)+'</p></div><div><b>¿Por qué importa?</b><p>'+esc(c.why)+'</p></div><div><b>Tu misión como analista</b><p>'+esc(c.mission)+'</p></div><div><b>Alcance de la conclusión</b><p>'+esc(c.decision)+'</p></div></div></section>';}
+function renderCaseStudy(m){if(!m.caseStudy)return '';const c=m.caseStudy;return '<section class="case-study-panel"><div class="case-study-top"><span class="case-study-tag">CASO DE ESTUDIO APLICADO</span><span class="case-study-sector">'+esc(c.sector)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-study-layout"><figure class="case-study-photo"><img src="assets/kitcube-factory.webp" alt="Línea de envasado de Alimentos Sierra Norte con una banda transportadora"><figcaption><i></i> INSPECCIÓN EN PLANTA · LÍNEA 02</figcaption></figure><div class="case-study-story"><article><b>Situación en planta</b><p>'+esc(c.context)+'</p></article><article><b>¿Por qué importa?</b><p>'+esc(c.why)+'</p></article><article class="case-story-mission"><b>Tu misión como analista</b><p>'+esc(c.mission)+'</p></article><article class="case-story-boundary"><b>Alcance de tu conclusión</b><p>'+esc(c.decision)+'</p></article></div><aside class="case-study-side"><div class="mentor-card"><img src="assets/kitcube-mentor.webp" alt="Guía visual del laboratorio KitCube"><div><b>Consejo del analista</b><p>Primero entiende qué representa cada dato. Después realiza la operación y explica qué significa para la planta.</p></div></div><div class="spacer-photo"><img src="assets/kitcube-spacers.webp" alt="Separadores metálicos seleccionados para inspección"><div><b>Componente en inspección</b><span>Separadores metálicos · grosor en mm</span></div></div></aside></div></section>';}
+const varianceReadings=[10,12,9,14,10];
+let selectedVariancePiece=0;
+function renderVarianceExplorer(){
+ const picks=varianceReadings.map((v,i)=>'<button type="button" class="piece-pick '+(i===selectedVariancePiece?'selected':'')+'" onclick="selectVariancePiece('+i+')"><span>P'+(i+1)+'</span><b>'+v+' <small>mm</small></b><em>VER</em></button>').join('');
+ const rows=varianceReadings.map((v,i)=>'<div class="measurement-row"><span>P'+(i+1)+'</span><div class="measurement-track"><i class="measurement-dot '+(i===selectedVariancePiece?'active':'')+'" style="left:'+((v-8)/7*100)+'%"></i></div><b>'+v+' mm</b></div>').join('');
+ return '<section class="variance-explorer" id="varianceExplorer"><div class="explorer-head"><div><span>LABORATORIO VISUAL · DATOS DEL CASO</span><h3>Explora los cinco separadores</h3><p>Selecciona una pieza para inspeccionar su lectura. Después de calcular el promedio, podrás comparar cada una con el valor central.</p></div><div class="explorer-count"><b>05</b><small>PIEZAS</small></div></div><div class="explorer-content"><div class="piece-selector">'+picks+'</div><div class="explorer-plot"><div class="plot-caption"><b>Mapa de mediciones</b><span>Escala de grosor · mm</span></div><div class="plot-rows">'+rows+'</div><div class="plot-axis"><span>8 mm</span><span>10 mm</span><span>12 mm</span><span>15 mm</span></div><div class="mean-legend" id="meanLegend"><i></i> Promedio de la muestra · 11 mm</div></div></div><div class="piece-insight" id="pieceInsight" aria-live="polite"></div><div class="explorer-foot">CONEXIÓN CON LA MISIÓN · <b>¿Qué tan lejos está cada pieza del grosor promedio?</b></div></section>';
+}
+function selectVariancePiece(index){selectedVariancePiece=Math.max(0,Math.min(4,Number(index)||0));updateVarianceExplorer();}
+function updateVarianceExplorer(){
+ const root=document.getElementById("varianceExplorer");if(!root)return;
+ const value=varianceReadings[selectedVariancePiece],meanKnown=!!completed['10_2'],diff=value-11;
+ root.querySelectorAll(".piece-pick").forEach((el,i)=>el.classList.toggle("selected",i===selectedVariancePiece));
+ root.querySelectorAll(".measurement-dot").forEach((el,i)=>el.classList.toggle("active",i===selectedVariancePiece));
+ const legend=document.getElementById("meanLegend");if(legend)legend.classList.toggle("visible",meanKnown);
+ const status=meanKnown?(diff<0?Math.abs(diff)+" mm por debajo del promedio":diff>0?diff+" mm por encima del promedio":"igual al promedio"):"El promedio aún está pendiente. Completa «Calcula el promedio muestral» para descubrir la diferencia.";
+ const insight=document.getElementById("pieceInsight");
+ if(insight)insight.innerHTML='<div><span>PIEZA</span><strong>P'+(selectedVariancePiece+1)+'</strong></div><div><span>GROSOR MEDIDO</span><b>'+value+' mm</b></div><div><span>'+(meanKnown?'COMPARACIÓN CON x̄ = 11 mm':'SIGUIENTE DESCUBRIMIENTO')+'</span><b>'+status+'</b></div>';
+}
 function renderModule(){
  const m=raw[current];document.getElementById("moduleEyebrow").textContent="MÓDULO "+current;
  document.getElementById("moduleTitle").textContent=m.title;document.getElementById("moduleDesc").textContent=m.desc;
  const meta=missionMeta[current];
- document.getElementById("moduleIntro").innerHTML=`${renderCaseStudy(m)}<div class="mission-brief"><div><span class="side-quest-tag">${esc(meta.code)} · MISIÓN PRINCIPAL</span><h3>${esc(meta.name)}</h3><p>${esc(meta.brief)}<br><strong>Objetivo:</strong> ${esc(meta.primary)}</p></div><div class="mission-reward"><b>+${25*m.steps.length+80} XP</b><small>RECOMPENSA BASE</small></div></div><div class="eyebrow">Expediente técnico</div><p>${esc(m.intro)}</p>${makeTable(m.table)}`;
+ document.getElementById("moduleIntro").innerHTML=`${renderCaseStudy(m)}<div class="mission-brief"><div><span class="side-quest-tag">${esc(meta.code)} · MISIÓN PRINCIPAL</span><h3>${esc(meta.name)}</h3><p>${esc(meta.brief)}<br><strong>Objetivo:</strong> ${esc(meta.primary)}</p></div><div class="mission-reward"><b>+${25*m.steps.length+80} XP</b><small>RECOMPENSA BASE</small></div></div><div class="eyebrow">Expediente técnico</div><p>${esc(m.intro)}</p>${makeTable(m.table)}${current===10?renderVarianceExplorer():""}`;
  document.getElementById("steps").innerHTML=m.steps.map((s,i)=>{let done=!!completed[current+"_"+i];return `<article class="step ${done?'done':''} ${i>0&&!completed[current+"_"+(i-1)]?'locked':''}" id="step${i}"><div class="step-top"><div class="num">${done?'✓':i+1}</div><h3>${esc(s[0])}</h3><span class="state">${done?'Completado':'Pendiente'}</span></div><div class="step-body"><p>${esc(s[1])}</p>${moduleCaseNotes[current]&&moduleCaseNotes[current][i]?'<div class="case-step-note"><b>Conexión con el caso</b><span>'+esc(moduleCaseNotes[current][i])+'</span></div>':""}<div class="formula">${esc(s[2])}</div><div class="answerrow">${inputFor(s,i).replace("<input ", (i>0&&!completed[current+"_"+(i-1)]?"<input disabled ":"<input ")).replace("<select ", (i>0&&!completed[current+"_"+(i-1)]?"<select disabled ":"<select ")).replace("<textarea ", (i>0&&!completed[current+"_"+(i-1)]?"<textarea disabled ":"<textarea "))}<button ${i>0&&!completed[current+"_"+(i-1)]?"disabled":""} onclick="check(${i})">Comprobar</button></div><button class="hintbtn" onclick="hint(${i})">Ver pista</button><div class="feedback" id="fb${i}"></div></div></article>`}).join("");
- updateSide();renderTabs();updateGlobal();renderSideMission();
+ updateSide();renderTabs();updateGlobal();renderSideMission();updateVarianceExplorer();
 }
 function renderSideMission(){const meta=missionMeta[current],unlocked=missionDone(current),done=!!sideCompleted[current],draft=sideAnswers[current]||"",target=document.getElementById("sideMission");if(!target)return;target.innerHTML=`<section class="side-mission ${unlocked?"":"locked"}"><div class="eyebrow">OBJETIVO SECUNDARIO · ${esc(meta.code)}</div><h3>${done?"Objetivo extra completado":esc(meta.side)}</h3><p>${unlocked?"Ve más allá del cálculo: demuestra que puedes explicar la decisión como profesional de Calidad.":"Este objetivo se abre al completar todos los pasos de la misión principal."}</p>${unlocked?`<div class="answerrow"><textarea id="sideAnswer" class="writebox" placeholder="Redacta tu explicación con tus propias palabras…" oninput="saveSideDraft()">${esc(draft)}</textarea></div><div class="answerrow"><button class="hintbtn" onclick="sideHint()">Ver orientación</button><button class="action" onclick="checkSideMission()">Validar objetivo · +${meta.reward} XP</button></div><div class="feedback" id="sideFeedback"></div>${done?'<div class="callout">Recompensa conseguida. Tu respuesta y tu logro se conservan en este dispositivo.</div>':""}`:`<div class="locked-msg">🔒 Misión principal pendiente · completa los pasos de esta estación para activar el desafío adicional.</div>`}</section>`;}
 function saveSideDraft(){const el=document.getElementById("sideAnswer");if(el){sideAnswers[current]=el.value;localStorage.setItem(studentKey("side_answers"),JSON.stringify(sideAnswers));}}
@@ -380,7 +460,7 @@ function check(i){
  else {const n=Number(val);ok=val!==""&&Number.isFinite(n)&&Math.abs(n-s[3])<=s[4];}
  if(ok){completed[current+"_"+i]=true;fb.className="feedback ok";fb.innerHTML=`<b>¡Correcto!</b> ${esc(s[5])} <br><span class="note">Paso validado. Puedes continuar con el siguiente.</span>`;document.getElementById("step"+i).classList.add("done");document.querySelector("#step"+i+" .state").textContent="Completado";document.querySelector("#step"+i+" .num").textContent="✓";let nx=document.getElementById("step"+(i+1));if(nx){nx.classList.remove("locked");let inp=nx.querySelector("input,select,textarea");let btn=nx.querySelector("button:not(.hintbtn)");if(inp)inp.disabled=false;if(btn)btn.disabled=false;}if(!wasDone){const moduleNowDone=raw[current].steps.every((st,j)=>!!completed[current+"_"+j]);showToast(moduleNowDone&&!moduleWasDone?"MISIÓN COMPLETADA · +25 XP y +80 XP de bonificación":"+25 XP · PASO VALIDADO · Sigue construyendo tu dominio.");}else{showToast("Paso ya validado · Tu progreso está protegido.");}}
  else{fb.className="feedback no";let msg=isTextStep(s)?"Tu explicación todavía está incompleta. Incluye los conceptos clave solicitados.":typeof s[3]==="string"?"Esa opción no corresponde a la situación. Relee el caso y piensa qué fuente describe.":"El resultado no coincide con el valor esperado dentro de la tolerancia. Revisa fórmula, sustitución, operación y unidades.";fb.innerHTML=`<b>Revisa tu procedimiento.</b> ${msg}<br><span class="note">Intento ${attempts[current+"_"+i]}. Puedes corregirlo y comprobar otra vez.</span>`;}
- save();updateSide();updateGlobal();renderTabs();renderSideMission();
+ save();updateSide();updateGlobal();renderTabs();renderSideMission();updateVarianceExplorer();updateVarianceExplorer();
 }
 let toastTimer;function showToast(message){const el=document.getElementById("toast");el.textContent=message;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2600);}
 function hint(i){const s=raw[current].steps[i],fb=document.getElementById("fb"+i);fb.className="feedback hint";fb.innerHTML=`<b>Pista:</b> ${esc(s[5])}`;}
